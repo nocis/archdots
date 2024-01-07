@@ -27,3 +27,4 @@ then
 else
     echo -e "\e[1;31m --[hyprland not installed] \e[0m"
 fi
+
