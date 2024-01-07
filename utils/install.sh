@@ -38,7 +38,7 @@ read -p "Do you want to install hyprland? " -n 1 -r
 echo    # (optional) move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-    echo $PW | sudo -kS pacman -S --noconfirm hyprland  > /dev/null 2>&1
+    echo $PW | sudo -kS pacman -S --noconfirm hyprland kitty  > /dev/null 2>&1
     echo -e "\e[1;33m --[hyprland installed] \e[0m"
 else
     echo -e "\e[1;31m --[hyprland not installed] \e[0m"
