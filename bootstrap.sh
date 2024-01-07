@@ -41,6 +41,7 @@ git pull --recurse-submodules > /dev/null 2>&1
 echo -e "\e[1;32m [clone scripts successfull] \e[0m"
 cd ..
 git remote set-url origin git@github.com:nocis/archdots.git
+git config --global core.autocrlf input
 
 
 # 5. auto install packages
