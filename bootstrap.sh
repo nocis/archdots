@@ -29,7 +29,7 @@ echo $PW | sudo -kS pacman -Syu > /dev/null 2>&1
 echo -e "\e[1;32m [pkgs update successful] \e[0m"
 
 # 2. install git
-echo $PW | sudo pacman -S --needed --noconfirm git > /dev/null 2>&1
+echo $PW | sudo -kS pacman -S --needed --noconfirm git > /dev/null 2>&1
 echo -e "\e[1;32m [git install successful] \e[0m"
 
 # 4. fetch scripts from 
