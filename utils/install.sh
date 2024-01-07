@@ -6,7 +6,6 @@
 # openssh
 # sshd: sudo systemctl start sshd
 
-
 # 1. 
 # read -p "Do you want to install Xorg drivers? " -n 1 -r
 # echo    # (optional) move to a new line
