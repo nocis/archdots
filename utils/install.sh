@@ -27,7 +27,7 @@ then
     echo $PW | sudo -kS git clone https://aur.archlinux.org/yay.git > /dev/null 2>&1
     echo $PW | sudo -kS chmod -R 777 yay > /dev/null 2>&1
     cd yay
-    makepkg -si > /dev/null 2>&1
+    echo $PW | makepkg -si > /dev/null 2>&1
     echo -e "\e[1;33m --[yay installed] \e[0m"
 else
     echo -e "\e[1;31m --[yay not installed] \e[0m"
