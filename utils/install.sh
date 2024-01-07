@@ -25,7 +25,7 @@ then
     echo $PW | sudo -kS pacman -S --needed --noconfirm base-devel  > /dev/null 2>&1
     cd /opt
     git clone https://aur.archlinux.org/yay.git
-    chmod 777 yay
+    chmod -R 777 yay
     cd yay
     makepkg -si
     echo -e "\e[1;33m --[yay installed] \e[0m"
