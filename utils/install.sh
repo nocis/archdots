@@ -24,10 +24,10 @@ if [[ $REPLY =~ ^[Yy]$ ]]
 then
     echo $PW | sudo -kS pacman -S --needed --noconfirm base-devel  > /dev/null 2>&1
     cd /opt
-    git clone https://aur.archlinux.org/yay.git
-    chmod -R 777 yay
+    echo $PW | sudo -kS git clone https://aur.archlinux.org/yay.git
+    echo $PW | sudo -kS chmod -R 777 yay
     cd yay
-    makepkg -si
+    echo $PW | sudo -kS makepkg -si
     echo -e "\e[1;33m --[yay installed] \e[0m"
 else
     echo -e "\e[1;31m --[yay not installed] \e[0m"
