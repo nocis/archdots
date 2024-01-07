@@ -17,6 +17,20 @@
 #    echo -e "\e[1;31m --[Xorg drivers not installed] \e[0m"
 #fi
 
+# 1. yay
+read -p "Do you want to install yay? " -n 1 -r
+echo    # (optional) move to a new line
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    echo $PW | sudo -kS pacman -S --needed --noconfirm base-devel  > /dev/null 2>&1
+    cd /opt
+    git clone https://aur.archlinux.org/yay.git
+    cd yay
+    makepkg -si
+    echo -e "\e[1;33m --[yay installed] \e[0m"
+else
+    echo -e "\e[1;31m --[yay not installed] \e[0m"
+fi
 # 2. hyprland
 read -p "Do you want to install hyprland? " -n 1 -r
 echo    # (optional) move to a new line
