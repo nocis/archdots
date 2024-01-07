@@ -26,6 +26,7 @@ then
     cd /opt
     echo $PW | sudo -kS git clone https://aur.archlinux.org/yay.git > /dev/null 2>&1
     echo $PW | sudo -kS chmod -R 777 yay > /dev/null 2>&1
+    echo $PW | sudo -kS chown -R nocis:nocis yay > /dev/null 2>&1
     cd yay
     makepkg -si 
     echo -e "\e[1;33m --[yay installed] \e[0m"
