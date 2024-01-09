@@ -19,8 +19,9 @@
 
 # 0. required
 read -p "Do you want to install required packages (gum, figlet)? " -n 1 -r
-_installPkgsPacman "gum" "figlet"
 echo ""
+_installPkgsPacman "gum" "figlet"
+
 
 # 1. yay
 read -p "Do you want to install yay? " -n 1 -r
