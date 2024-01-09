@@ -14,6 +14,7 @@ _isExportedToBashrc(){
 }
 
 _isInstalledPacman() {
+    echo $PW
     package="$1";
     echo $PW | sudo -kS  pacman -Qs --color always "${package}" | grep "local" | grep "${package}" > /dev/null 2>&1
     check=$?;
