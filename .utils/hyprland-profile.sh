@@ -10,5 +10,6 @@ if [[ $(_isInstalledPacman "hyprland") == 0 ]]; then
     hyprland_installed=1
 else
     echo -e "\e[1;32m --[hyprland NOT installed!] \e[0m"
+    exit
 fi
 echo
