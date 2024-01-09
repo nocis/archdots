@@ -29,11 +29,11 @@ _installPkgsPacman() {
     for pkg; do
         if [[ $(_isInstalledPacman "${pkg}") == 0 ]]; then
             echo -e "\e[1;33m --[${pkg} is already installed] \e[0m"
+            echo ""
             continue;
         fi;
         toInstall+=("${pkg}");
     done;
-    echo $toInstall
 
     if [[ "${toInstall[@]}" == "" ]] ; then
         return;
