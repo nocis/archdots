@@ -37,10 +37,11 @@ _installPkgsPacman() {
     echo $toInstall
 
     if [[ "${toInstall[@]}" == "" ]] ; then
-        # echo "All pacman packages are already installed.";
+        echo -e "\e[1;33m --[$@ are already installed] \e[0m"
         return;
     fi;
 
     # printf "Package not installed:\n%s\n" "${toInstall[@]}";
     echo $PW | sudo -kS  pacman --noconfirm -S "${toInstall[@]}" > /dev/null 2>&1
+    echo -e "\e[0;33m --[$@ are already installed] \e[0m"
 }
