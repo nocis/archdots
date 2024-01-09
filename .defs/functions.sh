@@ -6,8 +6,6 @@
 # -n : if not zero length
 # $? only once/per command
 
-PW = $1
-
 _isExportedToBashrc(){
     filename="$1";
     grep -q "$filename" "$HOME/.bashrc";
