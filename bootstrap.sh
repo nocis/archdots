@@ -3,6 +3,14 @@ source .defs/colors.sh
 source .defs/functions.sh
 clear
 
+if [ -d ~/.local/archdots ] ;then
+    echo "A dotfiles installation has been detected."
+    echo "This script will update dotfiles."
+else
+    echo "This script will instal dotfiles."
+fi
+echo ""
+
 
 
 
