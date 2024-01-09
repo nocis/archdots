@@ -19,7 +19,7 @@
 
 # 0. required
 read -p "Do you want to install required packages (gum, figlet)? " -n 1 -r
-_installPkgsPacman "gum" "figlet";
+_installPkgsPacman "gum" "figlet" > /dev/null 2>&1
 echo ""
 
 # 1. yay
