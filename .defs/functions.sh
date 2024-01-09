@@ -41,5 +41,5 @@ _installPkgsPacman() {
     fi;
 
     # printf "Package not installed:\n%s\n" "${toInstall[@]}";
-    echo $PW | sudo -kS  pacman --noconfirm -S "${toInstall[@]}";
+    echo $PW | sudo -kS  pacman --noconfirm -S "${toInstall[@]}" > /dev/null 2>&1
 }
