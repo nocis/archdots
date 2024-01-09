@@ -55,7 +55,7 @@ source ~/.local/archdots/.defs/colors.sh
 source ~/.local/archdots/.defs/functions.sh
 
 # 6. auto install packages
-_installPkgsPacman git > /dev/null 2>&1
+_installPkgsPacman git 
 . ~/.local/archdots/.utils/install.sh
 #echo -e "\e[1;32m [pkgs install successful] \e[0m"
 
