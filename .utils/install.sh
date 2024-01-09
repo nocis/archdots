@@ -1,3 +1,5 @@
+# ‘[[ ]]’ is an extended Bash command that is the enhanced version of ‘[ ]’.
+
 # 0. minimal packages
 # pacstrap -K /mnt base linux linux-firmware
 # efibootmgr: cat /etc/fstab | grep -om 1 "^UUID[^ ]*" >> /boot/loader/entries/arch.conf
