@@ -15,8 +15,9 @@ _isExportedToBashrc(){
 
 _isInstalledPacman() {
     package="$1";
-    echo "${PW}" | sudo -kS  pacman -Qs --color always "${package}" | grep "local" | grep "${package} "
+    echo "${PW}" | sudo -kS  pacman -Qs --color always "${package}" | grep "local" | grep "${package} " > /dev/null 2>&1
     check=$?;
+    echo $check
     if [ -n "${check}" ] ; then
         echo 0; #'0' means 'true' in Bash
         return; #true
@@ -28,7 +29,7 @@ _isInstalledPacman() {
 _installPkgsPacman() {
     toInstall=();
     for pkg; do
-        _isInstalledPacman $pkg
+        _isInstalledPacman slfg
         if [[ $(_isInstalledPacman "${pkg}") == 0 ]]; then
             echo "${pkg} is already installed.";
             continue;
