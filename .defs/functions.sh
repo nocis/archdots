@@ -40,5 +40,5 @@ _installPkgsPacman() {
 
     # printf "Package not installed:\n%s\n" "${toInstall[@]}";
     echo $PW | sudo -kS  pacman --noconfirm -S "${toInstall[@]}" > /dev/null 2>&1
-    echo -e "\e[1;32m --[${toInstall[@]} are already installed] \e[0m"
+    echo -e "\e[1;32m --[${toInstall[@]} installed successfully] \e[0m"
 }
