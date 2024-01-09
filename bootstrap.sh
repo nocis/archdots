@@ -1,4 +1,8 @@
 #!/bin/bash
+source .defs/colors.sh
+source .defs/functions.sh
+clear
+
 
 
 
