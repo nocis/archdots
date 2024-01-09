@@ -68,7 +68,16 @@ source ~/.local/archdots/.utils/profile.sh
 # 9. Hyprland Profile
 if [[ $profile == *"Hyprland"* ]]; then
     source ~/.local/archdots/.utils/hyprland-profile.sh
+    source ~/.local/archdots/.defs/hyprland-packages.sh
+    source ~/.local/archdots/.utils/install-packages.sh
 fi
+
+#if [[ $profile == *"Qtile"* ]]; then
+#    source .install/qtile.sh
+#    source .install/qtile-packages.sh
+#    source .install/install-packages.sh
+#fi
+
 
 
 # 7. append init.sh scrirt to bashrc
