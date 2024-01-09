@@ -55,6 +55,7 @@ git config --global core.autocrlf input
 
 
 # 5. auto install packages
+_installPkgsPacman git
 . ~/.local/archdots/.utils/install.sh
 #echo -e "\e[1;32m [pkgs install successful] \e[0m"
 
