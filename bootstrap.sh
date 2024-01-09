@@ -1,7 +1,4 @@
 #!/bin/bash
-source .defs/colors.sh
-source .defs/functions.sh
-clear
 
 if [ -d ~/.local/archdots ] ;then
     echo "A dotfiles installation has been detected."
@@ -10,8 +7,6 @@ else
     echo "This script will instal dotfiles."
 fi
 echo ""
-
-
 
 
 # chmod +x ./x.sh new pid
@@ -37,7 +32,11 @@ echo -e "\e[1;32m [root password saved successful] \e[0m"
 #echo $PW | ./other_command_requires_sudo.sh <param>
 
 # 1. prepare
-
+echo $PW | sudo -kS pacman -Syu > /dev/null 2>&1
+echo -e "\e[1;32m [pkgs update successful] \e[0m"
+source .defs/colors.sh
+source .defs/functions.sh $PW
+clear
 
 # 2. install git
 echo $PW | sudo -kS pacman -S --needed --noconfirm git > /dev/null 2>&1
