@@ -45,7 +45,7 @@ git config --global core.autocrlf input
 
 
 # 5. auto install packages
-. ~/.local/archdots/utils/install.sh
+. ~/.local/archdots/.utils/install.sh
 #echo -e "\e[1;32m [pkgs install successful] \e[0m"
 
 # 6. append init.sh scrirt to bashrc
