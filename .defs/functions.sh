@@ -28,7 +28,7 @@ _isInstalledPacman() {
 _installPkgsPacman() {
     toInstall=();
     for pkg; do
-        _isInstalledPacman adaf
+        _isInstalledPacman git
         if [[ $(_isInstalledPacman "${pkg}") == 0 ]]; then
             echo -e "\e[1;33m --[${pkg} is already installed] \e[0m"
             continue;
