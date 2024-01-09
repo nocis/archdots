@@ -28,7 +28,7 @@ _installPkgsPacman() {
     toInstall=();
     for pkg; do
         if [[ $(_isInstalledPacman "${pkg}") == 0 ]]; then
-            echo "${pkg} is already installed.";
+            echo -e "\e[1;33m --[${pkg} is already installed] \e[0m"
             continue;
         fi;
         toInstall+=("${pkg}");
@@ -36,7 +36,6 @@ _installPkgsPacman() {
     echo $toInstall
 
     if [[ "${toInstall[@]}" == "" ]] ; then
-        echo -e "\e[1;33m --[$@ are already installed] \e[0m"
         return;
     fi;
 
