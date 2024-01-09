@@ -16,6 +16,7 @@ _isExportedToBashrc(){
 _isInstalledPacman() {
     package="$1";
     check="$(sudo pacman -Qs --color always "${package}" | grep "local" | grep "${package} ")";
+    echo "${check}
     if [ -n "${check}" ] ; then
         echo 0; #'0' means 'true' in Bash
         return; #true
@@ -27,6 +28,7 @@ _isInstalledPacman() {
 _installPkgsPacman() {
     toInstall=();
     for pkg; do
+        _isInstalledPacman adaf
         if [[ $(_isInstalledPacman "${pkg}") == 0 ]]; then
             echo -e "\e[1;33m --[${pkg} is already installed] \e[0m"
             continue;
