@@ -6,6 +6,8 @@
 # -n : if not zero length
 # $? only once/per command
 
+PW = $1
+
 _isExportedToBashrc(){
     filename="$1";
     grep -q "$filename" "$HOME/.bashrc";
@@ -15,7 +17,7 @@ _isExportedToBashrc(){
 
 _isInstalledPacman() {
     package="$1";
-    check="$(sudo pacman -Qs --color always "${package}" | grep "local" | grep "${package} ")";
+    check="$(echo $PW | sudo -kS  pacman -Qs --color always "${package}" | grep "local" | grep "${package} ")";
     if [ -n "${check}" ] ; then
         echo 0; #'0' means 'true' in Bash
         return; #true
@@ -41,5 +43,5 @@ _installPkgsPacman() {
     fi;
 
     # printf "Package not installed:\n%s\n" "${toInstall[@]}";
-    sudo pacman --noconfirm -S "${toInstall[@]}";
+    echo $PW | sudo -kS  pacman --noconfirm -S "${toInstall[@]}";
 }
