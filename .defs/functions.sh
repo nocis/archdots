@@ -15,7 +15,7 @@ _isExportedToBashrc(){
 
 _isInstalledPacman() {
     package="$1";
-    check="$(echo $PW | sudo -kS  pacman -Qs --color always "${package}" | grep "local" | grep "${package} ")";
+    check="$(echo "${PW}" | sudo -kS  pacman -Qs --color always "${package}" | grep "local" | grep "${package} ")";
     echo "1"
     if [ -n "${check}" ] ; then
         echo 0; #'0' means 'true' in Bash
