@@ -65,6 +65,12 @@ source ~/.local/archdots/.utils/backup.sh
 # 8. Select profiles
 source ~/.local/archdots/.utils/profile.sh
 
+# 9. Hyprland Profile
+if [[ $profile == *"Hyprland"* ]]; then
+    source ~/.local/archdots/.utils/hyprland-profile.sh
+fi
+
+
 # 7. append init.sh scrirt to bashrc
 if grep -q "init.sh" ~/.bashrc
 then
