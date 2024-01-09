@@ -35,7 +35,7 @@ echo -e "\e[1;32m [root password saved successful] \e[0m"
 echo $PW | sudo -kS pacman -Syu > /dev/null 2>&1
 echo -e "\e[1;32m [pkgs update successful] \e[0m"
 source .defs/colors.sh
-source .defs/functions.sh $PW
+source .defs/functions.sh
 clear
 
 # 2. install git
