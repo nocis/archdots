@@ -17,6 +17,11 @@
 #    echo -e "\e[1;31m --[Xorg drivers not installed] \e[0m"
 #fi
 
+# 0. required
+read -p "Do you want to install required packages (gum, figlet)? " -n 1 -r
+_installPackagesPacman "gum" "figlet";
+echo ""
+
 # 1. yay
 read -p "Do you want to install yay? " -n 1 -r
 echo    # (optional) move to a new line
