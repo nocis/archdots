@@ -27,7 +27,6 @@ _isInstalledPacman() {
 _installPkgsPacman() {
     toInstall=();
     for pkg; do
-        _isInstalledPacman slfg
         if [[ $(_isInstalledPacman "${pkg}") == 0 ]]; then
             echo "${pkg} is already installed.";
             continue;
