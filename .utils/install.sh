@@ -37,7 +37,7 @@ then
     makepkg -si 
     echo -e "\e[1;33m --[yay installed] \e[0m"
     cd ..
-    rm -rf yay
+    echo $PW | sudo -kS rm -rf yay
 else
     echo -e "\e[1;31m --[yay not installed] \e[0m"
 fi
