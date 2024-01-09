@@ -59,6 +59,9 @@ _installPkgsPacman git
 . ~/.local/archdots/.utils/install.sh
 #echo -e "\e[1;32m [pkgs install successful] \e[0m"
 
+# 7. backup
+source ~/.local/archdots/.utils/backup.sh
+
 # 7. append init.sh scrirt to bashrc
 if grep -q "init.sh" ~/.bashrc
 then
