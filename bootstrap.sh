@@ -34,8 +34,6 @@ echo -e "\e[1;32m [root password saved successful] \e[0m"
 # 1. prepare
 echo $PW | sudo -kS pacman -Syu > /dev/null 2>&1
 echo -e "\e[1;32m [pkgs update successful] \e[0m"
-source .defs/colors.sh
-source .defs/functions.sh
 
 # 2. install git
 echo $PW | sudo -kS pacman -S --needed --noconfirm git > /dev/null 2>&1
@@ -52,13 +50,16 @@ git remote set-url origin git@github.com:nocis/archdots.git
 cd ..
 git config --global core.autocrlf input
 
+# 5. import 
+source ~/.local/archdots/.defs/colors.sh
+source ~/.local/archdots/.defs/functions.sh
 
-# 5. auto install packages
+# 6. auto install packages
 _installPkgsPacman git
 . ~/.local/archdots/.utils/install.sh
 #echo -e "\e[1;32m [pkgs install successful] \e[0m"
 
-# 6. append init.sh scrirt to bashrc
+# 7. append init.sh scrirt to bashrc
 if grep -q "init.sh" ~/.bashrc
 then
     # if found
