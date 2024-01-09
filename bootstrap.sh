@@ -62,6 +62,9 @@ _installPkgsPacman git
 # 7. backup
 source ~/.local/archdots/.utils/backup.sh
 
+# 8. Select profiles
+source ~/.local/archdots/.utils/profile.sh
+
 # 7. append init.sh scrirt to bashrc
 if grep -q "init.sh" ~/.bashrc
 then
