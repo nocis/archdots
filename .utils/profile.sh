@@ -13,5 +13,5 @@ if [ -z $profile ] ;then
     echo "No profile selected. Installation canceled."
     exit
 else
-    echo "Profile/s selected: $profile"
+    echo -e "\e[1;32m Profile/s selected: $profile \e[0m"
 fi
