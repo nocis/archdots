@@ -20,7 +20,12 @@
 # 0. required
 read -p "Do you want to install required packages (gum, figlet)? " -n 1 -r
 echo ""
-_installPkgsPacman "gum" "figlet"
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    _installPkgsPacman "gum" "figlet"
+else
+    echo -e "\e[1;31m --[required packages (gum, figlet) not installed] \e[0m"
+fi    
 
 
 # 1. yay
