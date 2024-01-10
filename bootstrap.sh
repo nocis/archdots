@@ -65,7 +65,10 @@ source ~/.local/archdots/.utils/backup.sh
 # 8. Select profiles
 source ~/.local/archdots/.utils/profile.sh
 
-# 9. Hyprland Profile
+
+source ~/.local/archdots/.defs/general-packages.sh
+source ~/.local/archdots/.utils/install-packages.sh
+# 9. Hyprland packages
 if [[ $profile == *"Hyprland"* ]]; then
     source ~/.local/archdots/.utils/hyprland-profile.sh
     source ~/.local/archdots/.defs/hyprland-packages.sh
