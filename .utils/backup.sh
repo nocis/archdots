@@ -24,10 +24,10 @@ echo -e "${NONE}"
             mkdir ~/.local/dots-backup/$datets
             echo "~/.local/dots-backup/$datets created"
         fi
-        # if [ -d ~/.local/archdots ]; then
-            # cp -r ~/.local/archdots/  ~/.local/dots-backup/$datets
-            # echo "Backup of your current dotfiles in ~/dotfiles-versions/backups/$datets created."
-        # fi
+        if [ -d ~/.local/archdots ]; then
+            cp -r ~/.local/archdots/config/  ~/.local/dots-backup/$datets
+            echo "Backup of your current dotfiles in ~/dots-backup/$datets."
+        fi
         if [ -f ~/.bashrc ]; then
             cp ~/.bashrc ~/.local/dots-backup/$datets/.bashrc-old
             echo "Existing .bashrc file found in homefolder. .bashrc-old created"
