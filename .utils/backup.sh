@@ -7,7 +7,7 @@ if [ -d ~/.local/archdots ] || [ -f ~/.bashrc ]; then
 echo -e "${GREEN}"
 figlet "Backup"
 echo -e "${NONE}"
-    if [ -d ~/.local/dots-backup ]; then
+    if [ -d ~/.local/dotfiles ]; then
         echo "The script has detected an existing dotfiles folder and will try to create a backup into the folder:"
         echo "~/.local/dots-backup/$datets"
     fi
@@ -24,8 +24,8 @@ echo -e "${NONE}"
             mkdir ~/.local/dots-backup/$datets
             echo "~/.local/dots-backup/$datets created"
         fi
-        if [ -d ~/.local/archdots ]; then
-            cp -rL ~/.config/*  ~/.local/dots-backup/$datets
+        if [ -d ~/.local/dotfiles ]; then
+            cp -r ~/.local/dotfiles/  ~/.local/dots-backup/$datets
             echo "Backup of your current dotfiles in ~/.local/dots-backup/$datets."
         fi
         if [ -f ~/.bashrc ]; then
