@@ -3,8 +3,9 @@ packagesPacman=(
     "waybar"
     "grim" # screnshot
     "slurp" # screenshot
-    "swayidle" 
-    "cliphist"
+    "swayidle" # sleep
+    "cliphist" # Clipboard
+    "mako" # push notifications
 )
 
 packagesYay=(
