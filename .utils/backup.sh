@@ -25,7 +25,7 @@ echo -e "${NONE}"
             echo "~/.local/dots-backup/$datets created"
         fi
         if [ -d ~/.local/archdots ]; then
-            cp -r ~/.local/archdots/config/  ~/.local/dots-backup/$datets
+            cp -rL ~/.config/*  ~/.local/dots-backup/$datets
             echo "Backup of your current dotfiles in ~/dots-backup/$datets."
         fi
         if [ -f ~/.bashrc ]; then
