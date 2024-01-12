@@ -81,6 +81,15 @@ fi
 #    source .install/install-packages.sh
 #fi
 
+# 10. config dotfiles
+if [[ $profile == *"Hyprland"* ]]; then
+    source ~/.local/archdots/.utils/hyprland-dotfiles.sh
+fi
+#if [[ $profile == *"Qtile"* ]]; then
+#    source .install/qtile-dotfiles.sh
+#fi
+
+
 
 
 # 7. append init.sh scrirt to bashrc
