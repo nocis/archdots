@@ -1,1 +1,1 @@
-_installSymLink hypr ~/.config/hypr ~/.local/archdots/config/hypr/ ~/.config
+_installSymLink hypr ~/.config/hypr ~/.local/dotfiles/config/hypr/ ~/.config
