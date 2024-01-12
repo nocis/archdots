@@ -90,7 +90,6 @@ then
         mkdir ~/.local/dotfiles
     fi
     cp -r ~/.local/archdots/config ~/.local/dotfiles/
-else
     echo -e "\e[1;31m --[config dotfiles installed in ~/.local/dotfiles/] \e[0m"
 fi    
 
