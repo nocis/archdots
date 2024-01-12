@@ -82,6 +82,18 @@ fi
 #fi
 
 # 10. config dotfiles
+read -p "Do you want to install config dotfiles? " -n 1 -r
+echo ""
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    if [[ ! -d ~/.local/dotfiles ]]; then
+        mkdir ~/.local/dotfiles
+    fi
+    cp -r ~/.local/archdots/config ~/.local/dotfiles/
+else
+    echo -e "\e[1;31m --[config dotfiles installed in ~/.local/dotfiles/] \e[0m"
+fi    
+
 if [[ $profile == *"Hyprland"* ]]; then
     source ~/.local/archdots/.utils/hyprland-dotfiles.sh
 fi
