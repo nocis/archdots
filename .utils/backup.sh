@@ -26,11 +26,11 @@ echo -e "${NONE}"
         fi
         if [ -d ~/.local/archdots ]; then
             cp -rL ~/.config/*  ~/.local/dots-backup/$datets
-            echo "Backup of your current dotfiles in ~/dots-backup/$datets."
+            echo "Backup of your current dotfiles in ~/.local/dots-backup/$datets."
         fi
         if [ -f ~/.bashrc ]; then
             cp ~/.bashrc ~/.local/dots-backup/$datets/.bashrc-old
-            echo "Existing .bashrc file found in homefolder. .bashrc-old created"
+            echo "Existing .bashrc file found in homefolder. ~/.local/dots-backup/$datets/.bashrc-old created"
         fi
     elif [ $? -eq 130 ]; then
         exit 130
