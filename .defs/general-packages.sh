@@ -1,6 +1,7 @@
 packagesPacman=(
     "chromium"
     "neovim"
+    "alacritty"
     "network-manager-applet"
 )
 
