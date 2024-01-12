@@ -89,7 +89,7 @@ then
         mkdir ~/.local/dotfiles
     fi
     cp -r ~/.local/archdots/config ~/.local/dotfiles/
-    echo -e "\e[1;31m --[config dotfiles installed in ~/.local/dotfiles/] \e[0m"
+    echo -e "\e[1;32m --[config dotfiles installed in ~/.local/dotfiles/] \e[0m"
 fi    
 
 if [[ $profile == *"Hyprland"* ]]; then
