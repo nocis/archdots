@@ -121,9 +121,9 @@ then
     fi 
 else
     # if not found
-    cat "# START INIT.SH" >> ~/.bashrc
+    echo "# START INIT.SH" >> ~/.bashrc
     cat ~/.local/archdots/init.sh >> ~/.bashrc 
-    cat "# END INIT.SH" >> ~/.bashrc
+    echo "# END INIT.SH" >> ~/.bashrc
     . ~/.local/archdots/init.sh 
     echo -e "\e[1;32m --[init.sh is already loaded in .bashrc] \e[0m"
 fi
