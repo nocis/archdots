@@ -110,7 +110,7 @@ _replaceInFile() {
     # Set function parameters
     start_string=$1
     end_string=$2
-    new_string="$3"
+    new_string="test"
     file_path="$4"
 
     # Counters
@@ -163,7 +163,7 @@ _replaceInFile() {
                 sed -i "$start_found,$end_found d" $file_path
             fi
             # Add the new line
-            # sed -i "$start_found i $new_string" $file_path
+            sed -i "$start_found i $new_string" $file_path
         else
             echo "ERROR: Delimiters syntax."
             sleep 2
