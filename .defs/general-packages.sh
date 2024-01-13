@@ -4,6 +4,7 @@ packagesPacman=(
     "alacritty"
     "thunar" # file manager
     "network-manager-applet"
+    "starship"
     "fd"
     "ripgrep"
 )
