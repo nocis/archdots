@@ -114,17 +114,19 @@ then
     echo ""
     if [[ $REPLY =~ ^[Yy]$ ]]
     then
+        startMarker="START INIT"
+        endMarker="END INIT"
         customtext="$(cat ~/.local/archdots/init.sh)"
-        _replaceInFile "START INIT.SH" "END INIT.SH" "$customtext" ~/.bashrc 
+        _replaceInFile "$startMarker" "$endMarker" "$customtext" ~/.bashrc 
         echo -e "\e[1;32m --[init.sh has been overwirten in .bashrc] \e[0m"
     else
         echo -e "\e[1;33m --[init.sh is already loaded in .bashrc] \e[0m"
     fi 
 else
     # if not found
-    echo "# START INIT.SH" >> ~/.bashrc
+    echo "# START INIT" >> ~/.bashrc
     cat ~/.local/archdots/init.sh >> ~/.bashrc 
-    echo "# END INIT.SH" >> ~/.bashrc
+    echo "# END INIT" >> ~/.bashrc
     . ~/.local/archdots/init.sh 
     echo -e "\e[1;32m --[init.sh is already loaded in .bashrc] \e[0m"
 fi
