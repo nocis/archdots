@@ -128,7 +128,7 @@ else
     echo "# START INIT" >> ~/.bashrc
     cat ~/.local/archdots/init.sh >> ~/.bashrc 
     echo "# END INIT" >> ~/.bashrc
-    . ~/.local/archdots/init.sh 
     echo -e "\e[1;32m --[init.sh is already loaded in .bashrc] \e[0m"
 fi
+. ~/.local/archdots/init.sh 
 echo -e "\e[1;32m [init.sh activated successfully] \e[0m"
