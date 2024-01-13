@@ -114,7 +114,8 @@ then
     echo ""
     if [[ $REPLY =~ ^[Yy]$ ]]
     then
-        _replaceInFile "START INIT.SH" "END INIT.SH" "$(cat ~/.local/archdots/init.sh)" ~/.bashrc 
+        customtext="$(cat ~/.local/archdots/init.sh)"
+        _replaceInFile "START INIT.SH" "END INIT.SH" "$customtext" ~/.bashrc 
         echo -e "\e[1;32m --[init.sh has been overwirten in .bashrc] \e[0m"
     else
         echo -e "\e[1;33m --[init.sh is already loaded in .bashrc] \e[0m"
