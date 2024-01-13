@@ -36,7 +36,7 @@ echo $PW | sudo -kS pacman -Syu > /dev/null 2>&1
 echo -e "\e[1;32m [pkgs update successful] \e[0m"
 
 # 2. install git
-echo $PW | sudo -kS pacman -S --needed --noconfirm git > /dev/null 2>&1
+echo $PW | sudo -kS pacman -S --needed --noconfirm git neovim > /dev/null 2>&1
 echo -e "\e[1;32m [git install successful] \e[0m"
 
 # 4. fetch scripts from 
@@ -50,24 +50,36 @@ git remote set-url origin git@github.com:nocis/archdots.git
 cd ..
 git config --global core.autocrlf input
 
-# 5. import 
+
+# 5. lazy vim
+read -p "Do you want to install lazy vim? " -n 1 -r
+echo ""
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    git clone https://github.com/LazyVim/starter ~/.config/nvim > /dev/null 2>&1
+    rm -rf ~/.config/nvim/.git
+    echo -e "\e[1;32m --[lazy vim installed in ~/.config/nvim/] \e[0m"
+fi    
+
+# 6. import 
 source ~/.local/archdots/.defs/colors.sh
 source ~/.local/archdots/.defs/functions.sh
 
-# 6. auto install packages
+# 7. auto install packages
 . ~/.local/archdots/.utils/install.sh
 #echo -e "\e[1;32m [pkgs install successful] \e[0m"
 
-# 7. backup
+# 8. backup
 source ~/.local/archdots/.utils/backup.sh
 
-# 8. Select profiles
+# 9. Select profiles
 source ~/.local/archdots/.utils/profile.sh
 
+# 10. install packages
 
 source ~/.local/archdots/.defs/general-packages.sh
 source ~/.local/archdots/.utils/install-packages.sh
-# 9. Hyprland packages
+
 if [[ $profile == *"Hyprland"* ]]; then
     source ~/.local/archdots/.utils/hyprland-profile.sh
     source ~/.local/archdots/.defs/hyprland-packages.sh
@@ -80,7 +92,7 @@ fi
 #    source .install/install-packages.sh
 #fi
 
-# 10. config dotfiles
+# 11. config dotfiles
 read -p "Do you want to install config dotfiles? " -n 1 -r
 echo ""
 if [[ $REPLY =~ ^[Yy]$ ]]
@@ -105,8 +117,7 @@ fi
 
 
 
-
-# 7. append init.sh scrirt to bashrc
+# 12. append init.sh scrirt to bashrc
 if grep -q "init.sh" ~/.bashrc
 then
     # if found
