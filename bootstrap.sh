@@ -91,6 +91,7 @@ then
         rm -rf ~/.local/dotfiles/*
     fi
     cp -r ~/.local/archdots/config ~/.local/dotfiles/
+    cp -r ~/.local/archdots/exports ~/.local/dotfiles/
     echo -e "\e[1;32m --[config dotfiles installed in ~/.local/dotfiles/] \e[0m"
 fi    
 
