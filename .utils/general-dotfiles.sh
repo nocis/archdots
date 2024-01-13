@@ -1,2 +1,2 @@
-_installSymLink alacritty ~/.config/alacritty ~/.local/dotfiles/config/alacritty/ ~/.config
+_installSymbolicLink  alacritty ~/.config/alacritty ~/.local/dotfiles/config/alacritty/ ~/.config
 
