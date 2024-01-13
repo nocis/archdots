@@ -35,9 +35,9 @@ echo -e "\e[1;32m [root password saved successful] \e[0m"
 echo $PW | sudo -kS pacman -Syu > /dev/null 2>&1
 echo -e "\e[1;32m [pkgs update successful] \e[0m"
 
-# 2. install git
+# 2. install git neovim
 echo $PW | sudo -kS pacman -S --needed --noconfirm git neovim > /dev/null 2>&1
-echo -e "\e[1;32m [git install successful] \e[0m"
+echo -e "\e[1;32m [git neovim install successful] \e[0m"
 
 # 4. fetch scripts from 
 git clone https://github.com/nocis/archdots.git > /dev/null 2>&1
