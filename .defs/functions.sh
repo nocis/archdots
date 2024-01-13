@@ -163,8 +163,7 @@ _replaceInFile() {
                 sed -i "$start_found,$end_found d" $file_path
             fi
             # Add the new line
-            echo $new_string
-            sed -i "$start_found i $new_string" $file_path
+            sed -i "$start_found i@$new_string" $file_path
         else
             echo "ERROR: Delimiters syntax."
             sleep 2
