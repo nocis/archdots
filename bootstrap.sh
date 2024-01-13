@@ -56,6 +56,10 @@ read -p "Do you want to install lazy vim? " -n 1 -r
 echo ""
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
+    rm -rf ~/.config/nvim
+    rm -rf ~/.local/share/nvim
+    rm -rf ~/.local/state/nvim
+    rm -rf ~/.cache/nvim
     git clone https://github.com/LazyVim/starter ~/.config/nvim > /dev/null 2>&1
     rm -rf ~/.config/nvim/.git
     echo -e "\e[1;32m --[lazy vim installed in ~/.config/nvim/] \e[0m"
