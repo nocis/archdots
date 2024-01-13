@@ -7,6 +7,7 @@ packagesPacman=(
     "starship"
     "fd"
     "ripgrep"
+    "ttf-jetbrains-mono-nerd"
 )
 
 packagesYay=(
