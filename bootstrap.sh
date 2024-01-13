@@ -116,7 +116,8 @@ then
     then
         startMarker="START INIT"
         endMarker="END INIT"
-        customtext='$(cat ~/.local/archdots/init.sh | sed 's_/_\\/_g')'
+        # customtext='$(cat ~/.local/archdots/init.sh | sed 's_/_\\/_g')'
+        customtext='$(cat ~/.local/archdots/init.sh)'
         _replaceInFile "$startMarker" "$endMarker" "$customtext" ~/.bashrc 
         echo -e "\e[1;32m --[init.sh has been overwirten in .bashrc] \e[0m"
     else
