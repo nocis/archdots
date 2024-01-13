@@ -163,6 +163,8 @@ _replaceFileInFile() {
                 sed -i "$start_found,$end_found d" $file_path
             fi
             # Add the new line
+            
+            ((start_found--))
             # sed -i "$start_found i $new_string" $file_path
             sed -i "$start_found r $customFile" $file_path
         else
