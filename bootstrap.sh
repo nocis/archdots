@@ -110,10 +110,21 @@ fi
 if grep -q "init.sh" ~/.bashrc
 then
     # if found
-    echo -e "\e[1;31m init.sh is already loaded \e[0m"
+    read -p "Do you want to overwrite init.sh in bashrc? " -n 1 -r
+    echo ""
+    if [[ $REPLY =~ ^[Yy]$ ]]
+    then
+        _replaceInFile "START INIT.SH" "END INIT.SH" "$(cat ~/.local/archdots/init.sh)" ~/.bashrc 
+        echo -e "\e[1;32m --[init.sh has been overwirten in .bashrc] \e[0m"
+    else
+        echo -e "\e[1;33m --[init.sh is already loaded in .bashrc] \e[0m"
+    fi 
 else
     # if not found
-    echo 'source ~/.local/archdots/init/init.sh' >> ~/.bashrc 
-    . ~/.local/archdots/init/init.sh 
-#fi
-#echo -e "\e[1;32m [init.sh activate successful] \e[0m"
+    cat "# START INIT.SH" >> ~/.bashrc
+    cat ~/.local/archdots/init.sh >> ~/.bashrc 
+    cat "# END INIT.SH" >> ~/.bashrc
+    . ~/.local/archdots/init.sh 
+    echo -e "\e[1;32m --[init.sh is already loaded in .bashrc] \e[0m"
+fi
+echo -e "\e[1;32m [init.sh activated successfully] \e[0m"
