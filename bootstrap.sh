@@ -94,6 +94,7 @@ then
     echo -e "\e[1;32m --[config dotfiles installed in ~/.local/dotfiles/] \e[0m"
 fi    
 
+source ~/.local/archdots/.utils/general-dotfiles.sh
 if [[ $profile == *"Hyprland"* ]]; then
     source ~/.local/archdots/.utils/hyprland-dotfiles.sh
 fi
