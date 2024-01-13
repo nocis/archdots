@@ -104,13 +104,13 @@ _installSymbolicLink(){
     fi
 }
 
-# _replaceInFile $startMarket $endMarker $customtext $targetFile
-_replaceInFile() {
+# _replaceFileInFile $startMarket $endMarker $customFile $targetFile
+_replaceFileInFile() {
 
     # Set function parameters
     start_string=$1
     end_string=$2
-    new_string=$3
+    customFile=$3
     file_path="$4"
 
     # Counters
@@ -163,7 +163,8 @@ _replaceInFile() {
                 sed -i "$start_found,$end_found d" $file_path
             fi
             # Add the new line
-            sed -i "$start_found i $new_string" $file_path
+            # sed -i "$start_found i $new_string" $file_path
+            sed -i "$start_found r $customFile" $file_path
         else
             echo "ERROR: Delimiters syntax."
             sleep 2
