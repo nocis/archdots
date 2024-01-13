@@ -12,5 +12,4 @@ packagesPacman=(
 
 packagesYay=(
     "pfetch"
-    "marktext"
 )
