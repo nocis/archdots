@@ -8,9 +8,9 @@ packagesPacman=(
     "fd"
     "ripgrep"
     "ttf-jetbrains-mono-nerd"
-    "marktext"
 )
 
 packagesYay=(
     "pfetch"
+    "marktext"
 )
