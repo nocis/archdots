@@ -34,17 +34,23 @@ echo ""
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
     _installPkgsPacman "nodejs" "npm"
-    git clone https://github.com/nvm-sh/nvm.git ~/.nvm
-    cd ~/.nvm
-    # Get new tags from remote
-    git fetch --tags
 
-    # Get latest tag name
-    latestTag=$(git describe --tags `git rev-list --tags --max-count=1`)
-    git checkout $latestTag
-    . ./nvm.sh
-    echo -e "\e[1;32m --[nvm installed successfully] \e[0m"
-    cd ~/.local
+    if [[ ! -d ~/.nvm ]]; then
+        git clone https://github.com/nvm-sh/nvm.git ~/.nvm
+        cd ~/.nvm
+        # Get new tags from remote
+        git fetch --tags
+
+        # Get latest tag name
+        latestTag=$(git describe --tags `git rev-list --tags --max-count=1`)
+        git checkout $latestTag
+        . ./nvm.sh
+        echo -e "\e[1;32m --[nvm installed successfully] \e[0m"
+        cd ~/.local
+    else
+        echo -e "\e[1;33m --[nvm already installed] \e[0m"
+    fi
+
 else
     echo -e "\e[1;31m --[nodejs, npm, nvm not installed] \e[0m"
 fi    
