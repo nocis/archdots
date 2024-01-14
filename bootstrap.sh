@@ -142,8 +142,8 @@ fi
 #fi
 
 # 11. config dotfiles
-echo ""
 read -p "Do you want to install config dotfiles? " -n 1 -r
+echo ""
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
     if [[ ! -d ~/.local/dotfiles ]]; then
@@ -170,8 +170,8 @@ fi
 if grep -q "init.sh" ~/.bashrc
 then
     # if found
-    echo ""
     read -p "Do you want to overwrite init.sh in bashrc? " -n 1 -r
+    echo ""
     if [[ $REPLY =~ ^[Yy]$ ]]
     then
         startMarker="START INIT"
