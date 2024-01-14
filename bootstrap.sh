@@ -58,7 +58,7 @@ echo -e "\e[1;32m [pkgs update successful] \e[0m"
 echo $PW | sudo -kS pacman -S --needed --noconfirm git neovim > /dev/null 2>&1
 echo -e "\e[1;32m [git neovim install successful] \e[0m"
 
-if [[ ! -f ~/.ssh/id_rsa ]]; then
+if [[ ! -f ~/.ssh/id_ed25519 ]]; then
     read -p "Enter github username: " githubuser
     git config --global user.name "$githubuser"
     echo "Using username $githubuser"
@@ -73,7 +73,7 @@ if [[ ! -f ~/.ssh/id_rsa ]]; then
     pub=`cat ~/.ssh/id_ed25519.pub`
 
     read -p "Enter github token: " githubToken
-    sshtitle = "archssh$(date '+%Y%m%d%H%M%S')"
+    sshtitle="archssh$(date '+%Y%m%d%H%M%S')"
 
     echo $sshtitle
     echo $pub
