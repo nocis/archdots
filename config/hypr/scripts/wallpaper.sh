@@ -1,1 +1,1 @@
-swww img ~/Downloads/Wallpapers/default*
+swww img ~/Downloads/Wallpapers/default.jpg
