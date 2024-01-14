@@ -84,7 +84,7 @@ if [[ ! -f ~/.ssh/id_ed25519.pub ]]; then
 fi
 
 # 4. fetch scripts from 
-git clone https://github.com/nocis/archdots.git > /dev/null 2>&1
+git clone https://github.com/nocis/archdots.git 
 cd archdots
 pwd > /dev/null 2>&1
 ls > /dev/null 2>&1
