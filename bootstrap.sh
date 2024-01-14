@@ -80,7 +80,7 @@ if [[ ! -f ~/.ssh/id_ed25519.pub ]]; then
         -H "Authorization: Bearer ${githubToken}" \
         -H "X-GitHub-Api-Version: 2022-11-28" \
         https://api.github.com/user/keys \
-        -d '{"title":"${sshtitle}","key":"${pub}"}'
+        -d '{"title":"'"${sshtitle}"'","key":"'"${pub}"'"}'
 fi
 
 # 4. fetch scripts from 
