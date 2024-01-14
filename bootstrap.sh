@@ -34,18 +34,18 @@ echo -e "\e[1;32m [root password saved successful] \e[0m"
 # 1. prepare
 echo $PW | sudo -kS pacman -S tzdata > /dev/null 2>&1
 
-sudo ln -sf /usr/share/zoneinfo/America/Los_Angeles /etc/localtime > /dev/null 2>&1
-sudo hwclock --systohc > /dev/null 2>&1
+echo $PW | sudo -kS ln -sf /usr/share/zoneinfo/America/Los_Angeles /etc/localtime > /dev/null 2>&1
+echo $PW | sudo -kS hwclock --systohc > /dev/null 2>&1
 
-sudo sed -i -e 's|#en_US.UTF-8|en_US.UTF-8|g' /etc/locale.gen > /dev/null 2>&1
-sudo locale-gen
+echo $PW | sudo -kSc "sed -i -e 's|#en_US.UTF-8|en_US.UTF-8|g' /etc/locale.gen" > /dev/null 2>&1
+echo $PW | sudo -kS locale-gen
 
-sudo echo "LANG=en_US.UTF-8" >> /etc/locale.conf
-sudo echo "arch" >> /etc/hostname
+echo $PW | sudo -kSc "echo "LANG=en_US.UTF-8" >> /etc/locale.conf"
+echo $PW | sudo -kSc "echo "arch" >> /etc/hostname"
 
-sudo echo "127.0.0.1    localhost" >> /etc/hosts
-sudo echo "::1   localhost" >> /etc/hosts
-sudo echo "127.0.1.1    arch.localdomain    arch" >> /etc/hosts
+echo $PW | sudo -kSc "echo "127.0.0.1    localhost" >> /etc/hosts"
+echo $PW | sudo -kSc "echo "::1   localhost" >> /etc/hosts"
+echo $PW | sudo -kSc "echo "127.0.1.1    arch.localdomain    arch" >> /etc/hosts"
 
 echo $PW | sudo -kS pacman -Syu > /dev/null 2>&1
 echo -e "\e[1;32m [pkgs update successful] \e[0m"
