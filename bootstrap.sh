@@ -58,7 +58,7 @@ echo -e "\e[1;32m [pkgs update successful] \e[0m"
 echo $PW | sudo -kS pacman -S --needed --noconfirm git neovim > /dev/null 2>&1
 echo -e "\e[1;32m [git neovim install successful] \e[0m"
 
-if [[ ! -f ~/.ssh/id_ed25519 ]]; then
+if [[ ! -f ~/.ssh/id_ed25519.pub ]]; then
     read -p "Enter github username: " githubuser
     git config --global user.name "$githubuser"
     echo "Using username $githubuser"
