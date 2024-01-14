@@ -74,16 +74,13 @@ if [[ ! -f ~/.ssh/id_ed25519 ]]; then
 
     read -p "Enter github token: " githubToken
     sshtitle=archssh"$(date '+%Y%m%d%H%M%S')"
-
-    echo $sshtitle
-    echo $pub
-#    curl -L \
-#        -X POST \
-#        -H "Accept: application/vnd.github+json" \
-#        -H "Authorization: Bearer ${githubToken}" \
-#        -H "X-GitHub-Api-Version: 2022-11-28" \
-#        https://api.github.com/user/keys \
-#        -d '{"title":"${sshtitle}","key":"${pub}"}'
+    curl -L \
+        -X POST \
+        -H "Accept: application/vnd.github+json" \
+        -H "Authorization: Bearer ${githubToken}" \
+        -H "X-GitHub-Api-Version: 2022-11-28" \
+        https://api.github.com/user/keys \
+        -d '{"title":"${sshtitle}","key":"${pub}"}'
 fi
 
 # 4. fetch scripts from 
