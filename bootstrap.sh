@@ -58,16 +58,17 @@ echo -e "\e[1;32m [pkgs update successful] \e[0m"
 echo $PW | sudo -kS pacman -S --needed --noconfirm git neovim > /dev/null 2>&1
 echo -e "\e[1;32m [git neovim install successful] \e[0m"
 
-rm -rf ~/.ssh/id_rsa ~/.ssh/id_rsa.pub
-read -p "Enter github email : " email
-echo "Using email $email"
-ssh-keygen -t ed25519 -C "$email"
-ssh-add ~/.ssh/id_rsa
-pub=`cat ~/.ssh/id_rsa.pub`
-read -p "Enter github username: " githubuser
-echo "Using username $githubuser"
-read -s -p "Enter github password for user $githubuser: " githubpass
-curl -u "$githubuser:$githubpass" -X POST -d "{\"title\":\"`hostname`\",\"key\":\"$pub\"}" https://api.github.com/user/keys
+if [[ ! -f ~/.ssh/id_rsa ]]; then
+    read -p "Enter github email : " email
+    echo "Using email $email"
+    ssh-keygen -t ed25519 -C "$email"
+    ssh-add ~/.ssh/id_rsa
+    pub=`cat ~/.ssh/id_rsa.pub`
+    read -p "Enter github username: " githubuser
+    echo "Using username $githubuser"
+    read -s -p "Enter github password for user $githubuser: " githubpass
+    curl -u "$githubuser:$githubpass" -X POST -d "{\"title\":\"`hostname`\",\"key\":\"$pub\"}" https://api.github.com/user/keys
+fi
 
 # 4. fetch scripts from 
 git clone https://github.com/nocis/archdots.git > /dev/null 2>&1
