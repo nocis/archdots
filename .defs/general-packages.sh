@@ -8,8 +8,7 @@ packagesPacman=(
     "fd"
     "ripgrep"
     "ttf-jetbrains-mono-nerd"
-    "nodejs"
-    "npm"
+    "unzip"
 )
 
 packagesYay=(
