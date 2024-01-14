@@ -70,7 +70,7 @@ if [[ ! -f ~/.ssh/id_ed25519.pub ]]; then
 
     eval $(ssh-agent -s)
     ssh-add ~/.ssh/id_ed25519.pub
-    pub=`cat ~/.ssh/id_ed25519.pub`
+    pub=$(<~/.ssh/id_ed25519.pub)
 
     read -p "Enter github token: " githubToken
     sshtitle=archssh"$(date '+%Y%m%d%H%M%S')"
