@@ -71,7 +71,7 @@ if [[ ! -f ~/.ssh/id_rsa ]]; then
     pub=`cat ~/.ssh/id_ed25519.pub`
 
     read -p "Enter github token: " githubToken
-    sshtitle = "archssh"+$(date '+%Y%m%d%H%M%S')
+    sshtitle = "archssh$(date '+%Y%m%d%H%M%S')"
 
     echo $sshtitle
     echo $pub
