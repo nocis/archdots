@@ -33,20 +33,19 @@ echo -e "\e[1;32m [root password saved successful] \e[0m"
 
 # 1. prepare
 echo $PW | sudo -kS pacman -S tzdata > /dev/null 2>&1
-su
-ln -sf /usr/share/zoneinfo/America/Los_Angeles /etc/localtime > /dev/null 2>&1
-hwclock --systohc > /dev/null 2>&1
 
-sed -i -e 's|#en_US.UTF-8|en_US.UTF-8|g' /etc/locale.gen > /dev/null 2>&1
-locale-gen
+sudo ln -sf /usr/share/zoneinfo/America/Los_Angeles /etc/localtime > /dev/null 2>&1
+sudo hwclock --systohc > /dev/null 2>&1
 
-echo "LANG=en_US.UTF-8" >> /etc/locale.conf
-echo "arch" >> /etc/hostname
+sudo sed -i -e 's|#en_US.UTF-8|en_US.UTF-8|g' /etc/locale.gen > /dev/null 2>&1
+sudo locale-gen
 
-echo "127.0.0.1    localhost" >> /etc/hosts
-echo "::1   localhost" >> /etc/hosts
-echo "127.0.1.1    arch.localdomain    arch" >> /etc/hosts
-exit
+sudo echo "LANG=en_US.UTF-8" >> /etc/locale.conf
+sudo echo "arch" >> /etc/hostname
+
+sudo echo "127.0.0.1    localhost" >> /etc/hosts
+sudo echo "::1   localhost" >> /etc/hosts
+sudo echo "127.0.1.1    arch.localdomain    arch" >> /etc/hosts
 
 echo $PW | sudo -kS pacman -Syu > /dev/null 2>&1
 echo -e "\e[1;32m [pkgs update successful] \e[0m"
