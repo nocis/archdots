@@ -71,7 +71,7 @@ _installPkgsYay() {
     fi;
 
     # printf "Package not installed:\n%s\n" "${toInstall[@]}";
-    yay --noconfirm -S "${toInstall[@]}" > /dev/null 2>&1
+    yay --noconfirm -S "${toInstall[@]}"
     echo -e "\e[1;32m --[${toInstall[@]} installed successfully] \e[0m"
 }
 
