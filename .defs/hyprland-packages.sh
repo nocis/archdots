@@ -13,4 +13,5 @@ packagesYay=(
     # "wlogout"
     # "wlr-randr" # display setting
     "python-pywal" # color scheme based on a randomly selected wallpaper
+    "swww" # wallpaper
 )
