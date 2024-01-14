@@ -59,15 +59,29 @@ echo $PW | sudo -kS pacman -S --needed --noconfirm git neovim > /dev/null 2>&1
 echo -e "\e[1;32m [git neovim install successful] \e[0m"
 
 if [[ ! -f ~/.ssh/id_rsa ]]; then
-    read -p "Enter github email : " email
-    echo "Using email $email"
-    ssh-keygen -t ed25519 -C "$email"
-    ssh-add ~/.ssh/id_rsa
-    pub=`cat ~/.ssh/id_rsa.pub`
     read -p "Enter github username: " githubuser
+    git config --global user.name "$githubuser"
     echo "Using username $githubuser"
-    read -s -p "Enter github password for user $githubuser: " githubpass
-    curl -u "$githubuser:$githubpass" -X POST -d "{\"title\":\"`hostname`\",\"key\":\"$pub\"}" https://api.github.com/user/keys
+    read -p "Enter github email : " email
+    git config --global user.email "$email"
+    echo "Using email $email"
+
+    ssh-keygen -t ed25519 -C "$email"
+    ssh-add ~/.ssh/id_ed25519.pub
+    pub=`cat ~/.ssh/id_ed25519.pub`
+
+    read -p "Enter github token: " githubToken
+    sshtitle = "archssh"+$(date '+%Y%m%d%H%M%S')
+
+    echo $sshtitle
+    echo $pub
+#    curl -L \
+#        -X POST \
+#        -H "Accept: application/vnd.github+json" \
+#        -H "Authorization: Bearer ${githubToken}" \
+#        -H "X-GitHub-Api-Version: 2022-11-28" \
+#        https://api.github.com/user/keys \
+#        -d '{"title":"${sshtitle}","key":"${pub}"}'
 fi
 
 # 4. fetch scripts from 
