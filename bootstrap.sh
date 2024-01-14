@@ -40,12 +40,16 @@ echo $PW | sudo -kS hwclock --systohc > /dev/null 2>&1
 echo $PW | sudo -kS bash -c "sed -i -e 's|#en_US.UTF-8|en_US.UTF-8|g' /etc/locale.gen" > /dev/null 2>&1
 echo $PW | sudo -kS locale-gen
 
-echo $PW | sudo -kS bash -c "echo 'LANG=en_US.UTF-8'>> /etc/locale.conf"
-echo $PW | sudo -kS bash -c "echo 'arch' >> /etc/hostname"
+echo $PW | sudo -kS rm /etc/locale.conf > /dev/null 2>&1 
+echo $PW | sudo -kS bash -c "echo 'LANG=en_US.UTF-8'>> /etc/locale.conf" > /dev/null 2>&1
 
-echo $PW | sudo -kS bash -c "echo '127.0.0.1    localhost' >> /etc/hosts"
-echo $PW | sudo -kS bash -c "echo '::1   localhost' >> /etc/hosts"
-echo $PW | sudo -kS bash -c "echo '127.0.1.1    arch.localdomain    arch' >> /etc/hosts"
+echo $PW | sudo -kS rm /etc/hostname > /dev/null 2>&1
+echo $PW | sudo -kS bash -c "echo 'arch' >> /etc/hostname" > /dev/null 2>&1
+
+echo $PW | sudo -kS rm /etc/hosts > /dev/null 2>&1
+echo $PW | sudo -kS bash -c "echo '127.0.0.1    localhost' >> /etc/hosts" > /dev/null 2>&1
+echo $PW | sudo -kS bash -c "echo '::1   localhost' >> /etc/hosts" > /dev/null 2>&1
+echo $PW | sudo -kS bash -c "echo '127.0.1.1    arch.localdomain    arch' >> /etc/hosts" > /dev/null 2>&1
 
 echo $PW | sudo -kS pacman -Syu > /dev/null 2>&1
 echo -e "\e[1;32m [pkgs update successful] \e[0m"
