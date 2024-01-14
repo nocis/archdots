@@ -37,7 +37,7 @@ echo $PW | sudo -kS pacman -S tzdata > /dev/null 2>&1
 echo $PW | sudo -kS ln -sf /usr/share/zoneinfo/America/Los_Angeles /etc/localtime > /dev/null 2>&1
 echo $PW | sudo -kS hwclock --systohc > /dev/null 2>&1
 
-echo $PW | sudo -kSc "sed -i -e 's|#en_US.UTF-8|en_US.UTF-8|g' /etc/locale.gen" > /dev/null 2>&1
+echo $PW | sudo -kS bash -c "sed -i -e 's|#en_US.UTF-8|en_US.UTF-8|g' /etc/locale.gen" > /dev/null 2>&1
 echo $PW | sudo -kS locale-gen
 
 echo $PW | sudo -kS bash -c "echo "LANG=en_US.UTF-8">> /etc/locale.conf"
