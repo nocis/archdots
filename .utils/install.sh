@@ -36,15 +36,15 @@ then
     _installPkgsPacman "nodejs" "npm"
 
     if [[ ! -d ~/.nvm ]]; then
-        git clone https://github.com/nvm-sh/nvm.git ~/.nvm
+        git clone https://github.com/nvm-sh/nvm.git ~/.nvm > /dev/null 2>&1
         cd ~/.nvm
         # Get new tags from remote
-        git fetch --tags
+        git fetch --tags > /dev/null 2>&1
 
         # Get latest tag name
         latestTag=$(git describe --tags `git rev-list --tags --max-count=1`)
-        git checkout $latestTag
-        . ./nvm.sh
+        git checkout $latestTag > /dev/null 2>&1
+        . ./nvm.sh > /dev/null 2>&1
         echo -e "\e[1;32m --[nvm installed successfully] \e[0m"
         cd ~/.local
     else
