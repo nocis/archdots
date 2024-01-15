@@ -9,6 +9,7 @@ packagesPacman=(
     "ripgrep"
     "ttf-jetbrains-mono-nerd"
     "unzip"
+    "acpi" # for battery.nvim
 )
 
 packagesYay=(
