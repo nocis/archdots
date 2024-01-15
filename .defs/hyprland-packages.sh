@@ -6,6 +6,7 @@ packagesPacman=(
     "swayidle" # sleep
     "cliphist" # Clipboard
     "mako" # push notifications
+    "wayvnc" # remote desktop wayvnc 0.0.0.0 (auto select headless-2)
 )
 
 packagesYay=(
