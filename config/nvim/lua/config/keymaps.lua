@@ -1,4 +1,4 @@
-local keymap = vim.kaymap
+local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
 -- Increment/decrement
