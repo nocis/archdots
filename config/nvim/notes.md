@@ -55,5 +55,5 @@
 14. comment out:
     gc
 
-15. hjkl: better way to move cursor
+15. hjkl: better way to move cursor，10j：down 10 lines
     HL : move tab, K: hover J: trailing line
