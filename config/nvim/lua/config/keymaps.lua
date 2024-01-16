@@ -13,11 +13,11 @@ keymap.set("n", "dw", 'vb"_d')
 keymap.set("n", "<C-a>", "gg<S-v>G")
 
 -- Disable continuations
-keymap.set("n", "<Leader>o", "o<Esc>^Da", opts)
-keymap.set("n", "<Leader>O", "O<Esc>^Da", opts)
+-- keymap.set("n", "<Leader>o", "o<Esc>^Da", opts)
+-- keymap.set("n", "<Leader>O", "O<Esc>^Da", opts)
 
 -- Jumplist
-keymap.set("n", "<C-m>", "<C-i>", opts)
+-- keymap.set("n", "<C-m>", "<C-i>", opts)
 
 -- New tab
 keymap.set("n", "te", ":tabedit")
@@ -31,6 +31,7 @@ keymap.set("n", "<leader>r", function()
 	require("lib.craftzdog.hsl").replaceHexWithHSL()
 end)
 
-keymap.set("n", "<leader>i", function()
-	require("lib.craftzdog.lsp").toggleInlayHints()
-end)
+-- unstable pre release
+-- keymap.set("n", "<leader>i", function()
+-- 	require("lib.craftzdog.lsp").toggleInlayHints()
+-- end)
