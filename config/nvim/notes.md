@@ -33,14 +33,14 @@
 9. search repalce: :%s/old/new/c
 
 10. LSP
-    <leader>cl	Lsp Info	
-    gd	Goto Definition	
-    gr	References	
-    gD	Goto Declaration	
-    gI	Goto Implementation	
-    gy	Goto T[y]pe Definition	
-    K	Hover	
-    <leader>cr	Rename
+    <leader>cl Lsp Info
+    gd Goto Definition
+    gr References
+    gD Goto Declaration
+    gI Goto Implementation
+    gy Goto T[y]pe Definition
+    K Hover
+    <leader>cr Rename
 
 11. buffer
     <leader>bd delete current buffer
@@ -49,3 +49,11 @@
     open jump list: `
     add mark a: ma (mb mc ....)
     delete mark :delmarks a
+
+13. print current file path: <c-g>
+
+14. comment out:
+    gc
+
+15. hjkl: better way to move cursor
+    HL : move tab, K: hover J: trailing line
