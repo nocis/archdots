@@ -29,3 +29,5 @@
    before line + insert mode: O,
 
 8. copy from register (ie. *) : "*p
+
+9. search repalce: :%s/old/new/c
