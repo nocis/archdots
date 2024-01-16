@@ -44,3 +44,8 @@
 
 11. buffer
     <leader>bd delete current buffer
+
+12. mark
+    open jump list: `
+    add mark a: ma (mb mc ....)
+    delete mark :delmarks a
