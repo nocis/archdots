@@ -10,7 +10,7 @@
    <c-o> <c-i> jump created by jump actions
 
 4. move
-   begin:0, end:$, insert after:a
+   begin:0, end:$, insert after:a, last word: b, next word:w
    down block:<c-D>, up block: <c-U>
 
 5. neotree deletebuffer file
@@ -24,3 +24,8 @@
    diw - delete (cut) word under the cursor
    daw - delete (cut) word under the cursor and the space after or before it
    :3,5d - delete lines starting from 3 to 5
+
+7. next line + insert mode: o
+   before line + insert mode: O,
+
+8. copy from register (ie. *) : "*p
