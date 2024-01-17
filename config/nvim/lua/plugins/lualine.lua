@@ -15,7 +15,7 @@ return {
 			table.insert(opts.sections.lualine_x, nvimbatteryn)
 			return {
 				options = {
-					globalstatus = true,
+					globalstatus = false,
 				},
 			}
 		end,
