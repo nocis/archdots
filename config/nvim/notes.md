@@ -60,4 +60,14 @@
 
 16. Search and highlight : /
     keep search result and back to normal: <enter>
-    Escape and clear hlsearch: <esc>	
+    Escape and clear hlsearch: <esc>
+
+17. help
+    Ctrl-] to follow the link
+
+18. search
+    press `n`. If you want to search backward for the previous occurrence, press `N`.
+
+19. buffer
+    [b: prev buffer
+    ]b: next buffer
