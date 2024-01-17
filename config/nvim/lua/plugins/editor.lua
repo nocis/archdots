@@ -15,9 +15,13 @@ return {
 				function()
 					require("telescope.builtin").find_files({
 						cwd = require("lazy.core.config").options.root,
+						follow = true,
+						hidden = true,
+						no_ignore = true,
 					})
 				end,
 				desc = "Find Plugin File",
+				-- desc = vim.fn.executable("rg") .. require("lazy.core.config").options.root,
 			},
 			{
 				";f",
