@@ -57,3 +57,7 @@
 
 15. hjkl: better way to move cursor，10j：down 10 lines
     HL : move tab, K: hover J: trailing line
+
+16. Search and highlight : /
+    keep search result and back to normal: <enter>
+    Escape and clear hlsearch: <esc>	
