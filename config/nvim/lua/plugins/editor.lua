@@ -13,6 +13,8 @@ return {
 			{
 				"<leader>fP",
 				function()
+					test = require("lazy.core.config").options.root,
+					vim.api.nvim_echo({{'first chunk and ', test}, {'second chunk to echo', 'None'}}, false, {})
 					require("telescope.builtin").find_files({
 						cwd = require("lazy.core.config").options.root,
 					})
