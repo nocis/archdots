@@ -3,4 +3,4 @@
 -- Add any additional options here
 vim.opt.relativenumber = false
 vim.opt.ignorecase = true -- Case insensitive searching UNLESS /C or capital in search
-vim.opt.laststatus = 2 -- show for every window
+vim.opt.laststatus = 2 -- always: show for every window
