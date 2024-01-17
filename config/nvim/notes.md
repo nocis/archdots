@@ -71,3 +71,6 @@
 19. buffer
     [b: prev buffer
     ]b: next buffer
+
+20. Rename
+    <leader>cr : rename prompt
