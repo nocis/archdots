@@ -13,11 +13,7 @@ return {
 				color = { fg = colors.black, bg = colors.blue },
 			}
 			table.insert(opts.sections.lualine_x, nvimbatteryn)
-			return {
-				options = {
-					globalstatus = false,
-				},
-			}
+			opts.options.globalstatus = false
 		end,
 	},
 }

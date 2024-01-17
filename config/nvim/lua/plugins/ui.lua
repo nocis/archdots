@@ -60,22 +60,23 @@ return {
 		},
 	},
 
-	--		buffer line
-	-- {
-	-- "akinsho/bufferline.nvim",
-	-- event = "VeryLazy",
-	-- keys = {
-	-- 	{ "<tab>", "<cmd>BufferLineCycleNext<cr>", desc = "Next tab" },
-	-- 	{ "<S-Tab>", "<cmd>BufferLineCyclePrev<cr>", desc = "Prev tab" },
-	-- },
-	--	opts = {
-	--		options = {
-	--	mode buffers show tabs, tabs show only page
-	--	mode = "tabs",
-	--	separator_style = "slant",
-	--	show_buffer_close_icons = false,
-	--	show_close_icon = false,
-	--			},
-	--		},
-	-- },
+	--			buffer line
+	--{
+	--"akinsho/bufferline.nvim",
+	--event = "VeryLazy",
+	--keys = {
+	--{ "<tab>", "<cmd>BufferLineCycleNext<cr>", desc = "Next tab" },
+	--{ "<S-Tab>", "<cmd>BufferLineCyclePrev<cr>", desc = "Prev tab" },
+	--},
+	--opts = {
+	--options = {
+	--mode buffers show tabs, tabs show only page
+	--mode = "buffers",
+	--always_show_bufferline = true,
+	--separator_style = "slant",
+	--show_buffer_close_icons = false,
+	--show_close_icon = false,
+	--},
+	--},
+	--},
 }
