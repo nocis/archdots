@@ -12,6 +12,9 @@ keymap.set("n", "dw", 'vb"_d')
 -- Select all
 keymap.set("n", "<C-a>", "gg<S-v>G")
 
+-- Do things without affecting the registers
+keymap.set("n", "x", '"_x')
+
 -- Disable continuations
 -- keymap.set("n", "<Leader>o", "o<Esc>^Da", opts)
 -- keymap.set("n", "<Leader>O", "O<Esc>^Da", opts)
