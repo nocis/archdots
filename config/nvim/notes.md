@@ -76,3 +76,7 @@
     <leader>cr : rename prompt
 
 21. :qa quit all windows for quick open next time
+
+22. f find and jump, i will insert before search character
+    t find and jumo, i will insert after search character
+    ; will repeat(next match)
