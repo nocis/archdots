@@ -80,3 +80,6 @@
 22. f find and jump, i will insert before search character
     t find and jumo, i will insert after search character
     ; will repeat(next match)
+
+23. completion
+    <c-e> stop menu!
