@@ -4,3 +4,4 @@
 vim.opt.relativenumber = false
 vim.opt.ignorecase = true -- Case insensitive searching UNLESS /C or capital in search
 vim.opt.laststatus = 2 -- always: show for every window
+vim.opt.completeopt = "menu,menuone,preview,noinsert"
