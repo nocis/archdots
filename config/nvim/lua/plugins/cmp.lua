@@ -15,6 +15,12 @@ return {
 		return {
 			completion = {
 				completeopt = "menu,menuone,preview,noinsert,noselect",
+
+                                get_trigger_characters = function(trigger_characters)
+                                    return vim.tbl_filter(function(char)
+                                        return char ~= ' '
+                                    end, trigger_characters)
+                                end
 			},
 			snippet = {
 				expand = function(args)
