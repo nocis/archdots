@@ -74,3 +74,5 @@
 
 20. Rename
     <leader>cr : rename prompt
+
+21. :qa quit all windows for quick open next time
