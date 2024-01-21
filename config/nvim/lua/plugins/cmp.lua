@@ -35,7 +35,7 @@ return {
 				["<C-Space>"] = cmp.mapping.complete(),
 				["<C-e>"] = function(fallback)
 					cmp.mapping.abort()
-					-- cmp.core:reset()
+					cmp.core:reset()
 				end,
 				["<CR>"] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 				["<S-CR>"] = cmp.mapping.confirm({
