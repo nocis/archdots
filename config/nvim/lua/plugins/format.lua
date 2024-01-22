@@ -1,3 +1,4 @@
+return {
 -- Customize the "injected" formatter
 require("conform").formatters.prettier = {
   -- Set the options field
@@ -47,3 +48,5 @@ require("conform").formatters_by_ft = {
       ["graphql"] = { "prettier" },
       ["handlebars"] = { "prettier" },
     }
+
+}
