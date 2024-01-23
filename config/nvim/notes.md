@@ -83,3 +83,12 @@
 
 23. completion
     <c-e> stop menu!
+
+24. format
+    confirm set .prettierrc
+
+25. LSP
+    .git folder as root dir
+
+26. eslint
+    package eslint install as eslint library
