@@ -49,7 +49,7 @@ return {
 						"typescript.tsx",
 					},
 					root_dir = function(...)
-						local useTypeServer = require("customLib.utils.have").enabled_typescript_tools()
+						local useTypeServer = vim.env.MY_NVIM_APPNAME ~= "vuevim"
 						if useTypeServer then
 							return require("lspconfig.util").root_pattern(".git")(...)
 						else
