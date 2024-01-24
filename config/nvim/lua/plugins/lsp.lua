@@ -22,7 +22,7 @@ return {
 		"neovim/nvim-lspconfig",
 		opts = {
 			inlay_hints = { enabled = false },
-			---@type lspconfig.options
+			--@type lspconfig.options
 			servers = {
 				cssls = {},
 				tailwindcss = {
@@ -32,12 +32,12 @@ return {
 				},
 				volar = {
 					-- capabilities = require("plugins.LSP.vue").capabilities,
-					filetypes = require("plugins.LSP.vue").filetypes,
-					root_dir = require("plugins.LSP.vue").root_dir,
+					filetypes = require("lib.LSP.vue").filetypes,
+					root_dir = require("lib.LSP.vue").root_dir,
 					-- init_options = require("plugins.LSP.vue").init_options,
-					on_new_config = require("plugins.LSP.vue").on_new_config,
-					settings = require("plugins.LSP.vue").settings,
-					on_attach = require("plugins.LSP.vue").on_attach,
+					on_new_config = require("lib.LSP.vue").on_new_config,
+					settings = require("lib.LSP.vue").settings,
+					on_attach = require("lib.LSP.vue").on_attach,
 				},
 				tsserver = {
 					root_dir = function(...)
@@ -206,15 +206,15 @@ return {
 			},
 			setup = {
 				volar = function()
-				          require("lazyvim.util").lsp.on_attach(function(client)
-				            -- Don't use volar for formatting
-				            if client.name == "volar" then
-				              client.server_capabilities.documentFormatting = false
-				              -- client.server_capabilities.documentFeatures.documentFormatting = false
-				              client.server_capabilities.documentFormattingProvider = false
-				            end
-				          end)
-				        end,
+					require("lazyvim.util").lsp.on_attach(function(client)
+						-- Don't use volar for formatting
+						if client.name == "volar" then
+							client.server_capabilities.documentFormatting = false
+							-- client.server_capabilities.documentFeatures.documentFormatting = false
+							client.server_capabilities.documentFormattingProvider = false
+						end
+					end)
+				end,
 				tsserver = function()
 					require("lazyvim.util").lsp.on_attach(function(client, bufnr)
 						if vim.fn.has("nvim-0.8") == 1 then
