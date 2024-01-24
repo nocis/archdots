@@ -41,7 +41,7 @@ return {
 				},
 				tsserver = {
 					root_dir = function(...)
-						if vim.env.NVIM_APPNAME == "lazyvim" then
+						if vim.env.MY_NVIM_APPNAME == "lazyvim" then
 							return require("lspconfig.util").root_pattern(".git")(...)
 						else
 							return false
