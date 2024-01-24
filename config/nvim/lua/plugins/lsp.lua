@@ -40,14 +40,14 @@ return {
 					on_attach = require("customLib.LSP.vue").on_attach,
 				},
 				tsserver = {
-					filetypes = {
+					filetypes = vim.env.MY_NVIM_APPNAME ~= "vuevim" and {
 						"javascript",
 						"javascriptreact",
 						"javascript.jsx",
 						"typescript",
 						"typescriptreact",
 						"typescript.tsx",
-					},
+					} or {},
 					root_dir = function(...)
 						local useTypeServer = vim.env.MY_NVIM_APPNAME ~= "vuevim"
 						if useTypeServer then
