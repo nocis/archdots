@@ -35,6 +35,9 @@ return {
 					end,
 					single_file_support = false,
 					settings = {
+						completions = {
+                                                        completeFunctionCalls = true,
+                                                },
 						typescript = {
 							inlayHints = {
 								includeInlayParameterNameHints = "literal",
@@ -59,6 +62,32 @@ return {
 						},
 					},
 					keys = {
+						{
+						        "<leader>co",
+						        function()
+ 						        vim.lsp.buf.code_action({
+ 						        apply = true,
+  						        context = {
+ 						                only = { "source.organizeImports.ts" },
+ 						                diagnostics = {},
+						        },
+						        })
+						        end,
+						        desc = "Organize Imports",
+						},
+						{
+						        "<leader>cR",
+						        function()
+ 						        vim.lsp.buf.code_action({
+ 						        apply = true,
+  						        context = {
+ 						                only = { "source.removeUnused.ts" },
+ 						                diagnostics = {},
+						        },
+						        })
+						        end,
+						        desc = "Remove Unused Imports",
+						},
 						{
 						        "<leader>ci",
 						        function()
