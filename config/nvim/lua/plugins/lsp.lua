@@ -31,16 +31,10 @@ return {
 					end,
 				},
 				volar = {
-					capabilities = require("cmp_nvim_lsp").default_capabilities(),
-					filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'},
-					root_dir = function(...)
-						if vim.env.NVIM_APPNAME == "vuevim" then
-							return require("lspconfig.util").root_pattern(".git")(...)
-						else
-							return false
-						end						
-					end,
-					-- init_options = require("utils.volar").init_options,
+					capabilities = require("utils.volar").capabilities,
+					filetypes = require("utils.lsp.volar").filetypes,
+					root_dir = require("utils.lsp.volar").root_dir,
+					init_options = require("utils.volar").init_options,
 					on_new_config = require("utils.lsp.volar").on_new_config,
 					settings = require("utils.lsp.volar").settings,
 					on_attach = require("utils.lsp.volar").on_attach,
