@@ -1,120 +1,76 @@
-local lspconfig = require 'lspconfig'
-local lspconfig_configs = require 'lspconfig.configs'
-local lspconfig_util = require 'lspconfig.util'
+local util = require("lspconfig.util")
 
-local function on_new_config(new_config, new_root_dir)
-    local function get_typescript_server_path(root_dir)
-        local project_root = lspconfig_util.find_node_modules_ancestor(root_dir)
-        return project_root and
-                   (lspconfig_util.path
-                       .join(project_root, 'node_modules', 'typescript', 'lib',
-                             'tsserverlibrary.js')) or ''
-    end
+local M = {}
 
-    if new_config.init_options and new_config.init_options.typescript and
-        new_config.init_options.typescript.serverPath == '' and
-        vim.env.NVIM_APPNAME == "vuevim" then
-        new_config.init_options.typescript.serverPath =
-            get_typescript_server_path(new_root_dir)
-    end
+local have_vue = require("utils.have").have_vue()
+
+--  ╭──────────────────────────────────────────────────────────╮
+--  │                         Settings                         │
+--  ╰──────────────────────────────────────────────────────────╯
+
+local function get_typescript_server_path(root_dir)
+	-- Alternative location if installed as root:
+	-- local global_ts = '/usr/local/lib/node_modules/typescript/lib'
+	local found_ts = ""
+	local global_ts = ""
+	local function check_dir(path)
+		found_ts = util.path.join(path, "node_modules", "typescript", "lib")
+		if util.path.exists(found_ts) then
+			return path
+		end
+	end
+
+	if util.search_ancestors(root_dir, check_dir) then
+		return found_ts
+	else
+		return global_ts
+	end
 end
 
-local volar_cmd = {'vue-language-server', '--stdio'}
-local volar_root_dir = lspconfig_util.root_pattern '.git'
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-local volar_api_default_config = {
-        cmd = volar_cmd,
-        root_dir = function(...)
-			if vim.env.NVIM_APPNAME == "vuevim" then
-				return volar_root_dir
-			else
-				return ''
-			end						
-		end,
-        on_new_config = on_new_config,
-        -- filetypes = {'vue'},
-        -- If you want to use Volar's Take Over Mode (if you know, you know)
-        filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
-        init_options = {
-            typescript = {serverPath = ''},
-            languageFeatures = {
-                implementation = true, -- new in @volar/vue-language-server v0.33
-                references = true,
-                definition = true,
-                typeDefinition = true,
-                callHierarchy = true,
-                hover = true,
-                rename = true,
-                renameFileRefactoring = true,
-                signatureHelp = true,
-                codeAction = true,
-                workspaceSymbol = true,
-                completion = {
-                    defaultTagNameCase = 'both',
-                    defaultAttrNameCase = 'kebabCase',
-                    getDocumentNameCasesRequest = false,
-                    getDocumentSelectionRequest = false
-                }
-            }
-        }
+capabilities.textDocument.foldingRange = {
+	dynamicRegistration = false,
+	lineFoldingOnly = true,
 }
--- lspconfig.volar_api.setup {}
 
-local volar_doc_default_config = {
-        cmd = volar_cmd,
-        root_dir = function(...)
-			if vim.env.NVIM_APPNAME == "vuevim" then
-				return volar_root_dir
-			else
-				return ''
-			end						
-		end,
-        on_new_config = on_new_config,
+--  ╭──────────────────────────────────────────────────────────╮
+--  │                       Volar Config                       │
+--  ╰──────────────────────────────────────────────────────────╯
 
-        -- filetypes = {'vue'},
-        -- If you want to use Volar's Take Over Mode (if you know, you know):
-        filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
-        init_options = {
-            typescript = {serverPath = ''},
-            languageFeatures = {
-                implementation = true, -- new in @volar/vue-language-server v0.33
-                documentHighlight = true,
-                documentLink = true,
-                codeLens = {showReferencesNotification = true},
-                -- not supported - https://github.com/neovim/neovim/pull/15723
-                semanticTokens = false,
-                diagnostics = true,
-                schemaRequestService = true
-            }
-        }
+local filetypes = have_vue and { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" }
+	or { "vue" }
+
+local root_dir = have_vue and require("lspconfig").util.root_pattern("package.json") 
+        or ""
+
+local init_options = {}
+
+local on_new_config = function(new_config, new_root_dir)
+	new_config.init_options.typescript.tsdk = get_typescript_server_path(new_root_dir)
+end
+
+local settings = {
+	typescript = {
+		preferences = {
+			-- "relative" | "non-relative" | "auto" | "shortest"(not sure)
+			importModuleSpecifier = "non-relative",
+		},
+	},
 }
--- lspconfig.volar_doc.setup {}
 
-local volar_html_default_config = {
-        cmd = volar_cmd,
-        root_dir = function(...)
-			if vim.env.NVIM_APPNAME == "vuevim" then
-				return volar_root_dir
-			else
-				return ''
-			end						
-		end,
-        on_new_config = on_new_config,
+local on_attach = function(client)
+	-- NOTE: close volar format
+	client.server_capabilities.documentFormattingProvider = false
+	client.server_capabilities.documentRangeFormatting = false
+end
 
-        -- filetypes = {'vue'},
-        -- If you want to use Volar's Take Over Mode (if you know, you know), intentionally no 'json':
-        filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
-        init_options = {
-            typescript = {serverPath = ''},
-            documentFeatures = {
-                selectionRange = true,
-                foldingRange = true,
-                linkedEditingRange = true,
-                documentSymbol = true,
-                -- not supported - https://github.com/neovim/neovim/pull/13654
-                documentColor = false,
-                documentFormatting = {defaultPrintWidth = 100}
-            }
-        }
-}
--- lspconfig.volar_html.setup {}
+M.capabilities = capabilities
+M.filetypes = filetypes
+M.root_dir = root_dir
+M.init_options = init_options
+M.on_new_config = on_new_config
+M.settings = settings
+M.on_attach = on_attach
+
+return M
