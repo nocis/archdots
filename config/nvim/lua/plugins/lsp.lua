@@ -31,13 +31,13 @@ return {
 					end,
 				},
 				volar = {
-					-- capabilities = require("LSP.vue").capabilities,
-					filetypes = require("LSP.vue").filetypes,
-					root_dir = require("LSP.vue").root_dir,
-					-- init_options = require("LSP.vue").init_options,
-					on_new_config = require("LSP.vue").on_new_config,
-					settings = require("LSP.vue").settings,
-					on_attach = require("LSP.vue").on_attach,
+					-- capabilities = require("plugins.LSP.vue").capabilities,
+					filetypes = require("plugins.LSP.vue").filetypes,
+					root_dir = require("plugins.LSP.vue").root_dir,
+					-- init_options = require("plugins.LSP.vue").init_options,
+					on_new_config = require("plugins.LSP.vue").on_new_config,
+					settings = require("plugins.LSP.vue").settings,
+					on_attach = require("plugins.LSP.vue").on_attach,
 				},
 				tsserver = {
 					root_dir = function(...)
@@ -45,13 +45,13 @@ return {
 							return require("lspconfig.util").root_pattern(".git")(...)
 						else
 							return false
-						end						
+						end
 					end,
 					single_file_support = false,
 					settings = {
 						completions = {
-                                                        completeFunctionCalls = true,
-                                                },
+							completeFunctionCalls = true,
+						},
 						typescript = {
 							inlayHints = {
 								includeInlayParameterNameHints = "literal",
@@ -77,56 +77,56 @@ return {
 					},
 					keys = {
 						{
-						        "<leader>co",
-						        function()
- 						        vim.lsp.buf.code_action({
- 						        apply = true,
-  						        context = {
- 						                only = { "source.organizeImports.ts" },
- 						                diagnostics = {},
-						        },
-						        })
-						        end,
-						        desc = "Organize Imports",
+							"<leader>co",
+							function()
+								vim.lsp.buf.code_action({
+									apply = true,
+									context = {
+										only = { "source.organizeImports.ts" },
+										diagnostics = {},
+									},
+								})
+							end,
+							desc = "Organize Imports",
 						},
 						{
-						        "<leader>cR",
-						        function()
- 						        vim.lsp.buf.code_action({
- 						        apply = true,
-  						        context = {
- 						                only = { "source.removeUnused.ts" },
- 						                diagnostics = {},
-						        },
-						        })
-						        end,
-						        desc = "Remove Unused Imports",
+							"<leader>cR",
+							function()
+								vim.lsp.buf.code_action({
+									apply = true,
+									context = {
+										only = { "source.removeUnused.ts" },
+										diagnostics = {},
+									},
+								})
+							end,
+							desc = "Remove Unused Imports",
 						},
 						{
-						        "<leader>ci",
-						        function()
- 						        vim.lsp.buf.code_action({
- 						        apply = true,
-  						        context = {
- 						                only = { "source.addMissingImports.ts" },
- 						                diagnostics = vim.diagnostic.get(vim.api.nvim_get_current_buf()),
-						        },
-						        })
-						        end,
-						        desc = "Add Missing Imports",
+							"<leader>ci",
+							function()
+								vim.lsp.buf.code_action({
+									apply = true,
+									context = {
+										only = { "source.addMissingImports.ts" },
+										diagnostics = vim.diagnostic.get(vim.api.nvim_get_current_buf()),
+									},
+								})
+							end,
+							desc = "Add Missing Imports",
 						},
 						{
-						        "<leader>cs",
-						        function()
- 						        vim.lsp.buf.code_action({
- 						        apply = true,
-  						        context = {
- 						                only = { "source.sortImports.ts" },
- 						                diagnostics = {},
-						        },
-						        })
-						        end,
-						        desc = "Sort Imports",
+							"<leader>cs",
+							function()
+								vim.lsp.buf.code_action({
+									apply = true,
+									context = {
+										only = { "source.sortImports.ts" },
+										diagnostics = {},
+									},
+								})
+							end,
+							desc = "Sort Imports",
 						},
 					},
 				},
@@ -206,72 +206,82 @@ return {
 			},
 			setup = {
 				tsserver = function()
-                                    require("lazyvim.util").lsp.on_attach(function(client, bufnr)
-							if vim.fn.has("nvim-0.8") == 1 then
-							    client.server_capabilities.documentFormattingProvider = false
-							    client.server_capabilities.documentRangeFormattingProvider = false
-							  else
-							    client.resolved_capabilities.document_formatting = false
-							    client.resolved_capabilities.document_range_formatting = false
- 							 end
-							local make_diagnostics_handler = function(original_handler)
-							    return function(...)
-							        local config_or_client_id = select(4, ...)
-   							        local is_new = type(config_or_client_id) ~= "number"
-  							        local result = is_new and select(2, ...) or select(3, ...)
+					require("lazyvim.util").lsp.on_attach(function(client, bufnr)
+						if vim.fn.has("nvim-0.8") == 1 then
+							client.server_capabilities.documentFormattingProvider = false
+							client.server_capabilities.documentRangeFormattingProvider = false
+						else
+							client.resolved_capabilities.document_formatting = false
+							client.resolved_capabilities.document_range_formatting = false
+						end
+						local make_diagnostics_handler = function(original_handler)
+							return function(...)
+								local config_or_client_id = select(4, ...)
+								local is_new = type(config_or_client_id) ~= "number"
+								local result = is_new and select(2, ...) or select(3, ...)
 
-							        local filter_out_diagnostics_by_severity = {}
-							        local filter_out_diagnostics_by_code = { 80001 }
+								local filter_out_diagnostics_by_severity = {}
+								local filter_out_diagnostics_by_code = { 80001 }
 
-							        -- Convert string severities to numbers
-							        filter_out_diagnostics_by_severity = vim.tbl_map(function(severity)
-							            if type(severity) == "string" then
-							                return u.severities[severity]
-							            end
+								-- Convert string severities to numbers
+								filter_out_diagnostics_by_severity = vim.tbl_map(function(severity)
+									if type(severity) == "string" then
+										return u.severities[severity]
+									end
 
-							            return severity
-							        end, filter_out_diagnostics_by_severity)
+									return severity
+								end, filter_out_diagnostics_by_severity)
 
-							        if #filter_out_diagnostics_by_severity > 0 or #filter_out_diagnostics_by_code > 0 then
-							            local filtered_diagnostics = vim.tbl_filter(function(diagnostic)
- 							               -- Only filter out Typescript LS diagnostics
-  							              if diagnostic.source ~= "typescript" then
-  							                  return true
-   							             end
+								if #filter_out_diagnostics_by_severity > 0 or #filter_out_diagnostics_by_code > 0 then
+									local filtered_diagnostics = vim.tbl_filter(function(diagnostic)
+										-- Only filter out Typescript LS diagnostics
+										if diagnostic.source ~= "typescript" then
+											return true
+										end
 
-							                -- Filter out diagnostics with forbidden severity
-							                if vim.tbl_contains(filter_out_diagnostics_by_severity, diagnostic.severity) then
-							                    return false
-							                end
+										-- Filter out diagnostics with forbidden severity
+										if
+											vim.tbl_contains(filter_out_diagnostics_by_severity, diagnostic.severity)
+										then
+											return false
+										end
 
-							                -- Filter out diagnostics with forbidden code
-							                if vim.tbl_contains(filter_out_diagnostics_by_code, diagnostic.code) then
-							                    return false
-							                end
+										-- Filter out diagnostics with forbidden code
+										if vim.tbl_contains(filter_out_diagnostics_by_code, diagnostic.code) then
+											return false
+										end
 
-							                return true
-							            end, result.diagnostics)
+										return true
+									end, result.diagnostics)
 
-							            result.diagnostics = filtered_diagnostics
-							        end
+									result.diagnostics = filtered_diagnostics
+								end
 
-							        local config_idx = is_new and 4 or 6
-							        local config = select(config_idx, ...) or {}
+								local config_idx = is_new and 4 or 6
+								local config = select(config_idx, ...) or {}
 
-							        if is_new then
-							            original_handler(select(1, ...), select(2, ...), select(3, ...), config)
-							        else
-							            original_handler(select(1, ...), select(2, ...), select(3, ...), select(4, ...), select(5, ...), config)
-							        end
-							    end
+								if is_new then
+									original_handler(select(1, ...), select(2, ...), select(3, ...), config)
+								else
+									original_handler(
+										select(1, ...),
+										select(2, ...),
+										select(3, ...),
+										select(4, ...),
+										select(5, ...),
+										config
+									)
+								end
 							end
-							
-							local PUBLISH_DIAGNOSTICS = "textDocument/publishDiagnostics"
-						        local diagnostics_handler = client.handlers[PUBLISH_DIAGNOSTICS] or vim.lsp.handlers[PUBLISH_DIAGNOSTICS]
-							
-							client.handlers[PUBLISH_DIAGNOSTICS] = make_diagnostics_handler(diagnostics_handler)
-                                        end)
-                               end,
+						end
+
+						local PUBLISH_DIAGNOSTICS = "textDocument/publishDiagnostics"
+						local diagnostics_handler = client.handlers[PUBLISH_DIAGNOSTICS]
+							or vim.lsp.handlers[PUBLISH_DIAGNOSTICS]
+
+						client.handlers[PUBLISH_DIAGNOSTICS] = make_diagnostics_handler(diagnostics_handler)
+					end)
+				end,
 			},
 		},
 	},

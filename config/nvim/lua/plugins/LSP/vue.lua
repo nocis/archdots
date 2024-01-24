@@ -2,7 +2,7 @@ local util = require("lspconfig.util")
 
 local M = {}
 
-local have_vue = require("utils.have").have_vue()
+local have_vue = require("plugins.utils.have").have_vue()
 
 --  ╭──────────────────────────────────────────────────────────╮
 --  │                         Settings                         │
@@ -41,8 +41,7 @@ capabilities.textDocument.foldingRange = {
 local filetypes = have_vue and { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" }
 	or { "vue" }
 
-local root_dir = have_vue and require("lspconfig").util.root_pattern("package.json") 
-        or ""
+local root_dir = have_vue and require("lspconfig").util.root_pattern("package.json") or ""
 
 local init_options = {}
 
