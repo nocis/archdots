@@ -31,7 +31,7 @@ export NVM_DIR="$HOME/.nvm"
 # -----------------------------------------------------
 alias vuevim="export NVIM_APPNAME=vuevim && nvim"
 alias lazyvim="export NVIM_APPNAME=lazyvim && nvim"
-// default lazyvim
+# default lazyvim
 export NVIM_APPNAME=lazyvim
 
 
