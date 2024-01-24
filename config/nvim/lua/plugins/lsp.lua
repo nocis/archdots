@@ -31,13 +31,13 @@ return {
 					end,
 				},
 				volar = {
-					-- capabilities = require("utils.volar").capabilities,
-					filetypes = require("utils.lsp.volar").filetypes,
-					root_dir = require("utils.lsp.volar").root_dir,
-					-- init_options = require("utils.volar").init_options,
-					on_new_config = require("utils.lsp.volar").on_new_config,
-					settings = require("utils.lsp.volar").settings,
-					on_attach = require("utils.lsp.volar").on_attach,
+					-- capabilities = require("LSP.vue").capabilities,
+					filetypes = require("LSP.vue").filetypes,
+					root_dir = require("LSP.vue").root_dir,
+					-- init_options = require("LSP.vue").init_options,
+					on_new_config = require("LSP.vue").on_new_config,
+					settings = require("LSP.vue").settings,
+					on_attach = require("LSP.vue").on_attach,
 				},
 				tsserver = {
 					root_dir = function(...)
