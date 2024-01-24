@@ -96,3 +96,6 @@
 27. javascript lint and auto import
     required js/tsconfig.json
     checkJs: true
+    
+29. for vue lsp
+    install typescript and @vue/language-server
