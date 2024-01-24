@@ -30,14 +30,14 @@ export NVM_DIR="$HOME/.nvm"
 # NeoVim
 # -----------------------------------------------------
 function vuevim
-    env NVIM_APPNAME=vuevim nvim
+    export NVIM_APPNAME=vuevim && nvim
 end
 
 function lazyvim
-    env NVIM_APPNAME=lazyvim nvim
+    export NVIM_APPNAME=lazyvim && nvim
 end
 
 // default lazyvim
-env NVIM_APPNAME=lazyvim
+export NVIM_APPNAME=lazyvim
 
 
