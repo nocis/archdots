@@ -140,7 +140,7 @@ return {
                                                     filter_out_diagnostics_by_code = { 80001 },
                                                 })
                                                 require('nvim-lsp-ts-utils').setup_client(client)
-                                        end,)
+                                        end)
                                end,
 			},
 		},
