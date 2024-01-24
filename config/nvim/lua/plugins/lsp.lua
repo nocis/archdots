@@ -58,6 +58,34 @@ return {
 							},
 						},
 					},
+					keys = {
+						{
+						        "<leader>ci",
+						        function()
+ 						        vim.lsp.buf.code_action({
+ 						        apply = true,
+  						        context = {
+ 						                only = { "source.addMissingImports.ts" },
+ 						                diagnostics = {},
+						        },
+						        })
+						        end,
+						        desc = "Add Missing Imports",
+						},
+						{
+						        "<leader>cs",
+						        function()
+ 						        vim.lsp.buf.code_action({
+ 						        apply = true,
+  						        context = {
+ 						                only = { "source.sortImports.ts" },
+ 						                diagnostics = {},
+						        },
+						        })
+						        end,
+						        desc = "Sort Imports",
+						},
+					},
 				},
 				html = {},
 				yamlls = {
