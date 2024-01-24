@@ -12,7 +12,8 @@ local function on_new_config(new_config, new_root_dir)
     end
 
     if new_config.init_options and new_config.init_options.typescript and
-        new_config.init_options.typescript.serverPath == '' then
+        new_config.init_options.typescript.serverPath == '' and
+        vim.env.NVIM_APPNAME == "vuevim" then
         new_config.init_options.typescript.serverPath =
             get_typescript_server_path(new_root_dir)
     end
@@ -23,7 +24,13 @@ local volar_root_dir = lspconfig_util.root_pattern '.git'
 
 local volar_api_default_config = {
         cmd = volar_cmd,
-        root_dir = volar_root_dir,
+        root_dir = function(...)
+			if vim.env.NVIM_APPNAME == "vuevim" then
+				return volar_root_dir
+			else
+				return ''
+			end						
+		end,
         on_new_config = on_new_config,
         -- filetypes = {'vue'},
         -- If you want to use Volar's Take Over Mode (if you know, you know)
@@ -55,7 +62,13 @@ local volar_api_default_config = {
 
 local volar_doc_default_config = {
         cmd = volar_cmd,
-        root_dir = volar_root_dir,
+        root_dir = function(...)
+			if vim.env.NVIM_APPNAME == "vuevim" then
+				return volar_root_dir
+			else
+				return ''
+			end						
+		end,
         on_new_config = on_new_config,
 
         -- filetypes = {'vue'},
@@ -79,7 +92,13 @@ local volar_doc_default_config = {
 
 local volar_html_default_config = {
         cmd = volar_cmd,
-        root_dir = volar_root_dir,
+        root_dir = function(...)
+			if vim.env.NVIM_APPNAME == "vuevim" then
+				return volar_root_dir
+			else
+				return ''
+			end						
+		end,
         on_new_config = on_new_config,
 
         -- filetypes = {'vue'},
