@@ -95,7 +95,7 @@ return {
  						        apply = true,
   						        context = {
  						                only = { "source.addMissingImports.ts" },
- 						                diagnostics = {},
+ 						                diagnostics = vim.diagnostic.get(vim.api.nvim_get_current_buf()),
 						        },
 						        })
 						        end,
