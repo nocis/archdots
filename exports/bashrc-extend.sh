@@ -26,3 +26,18 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
+# -----------------------------------------------------
+# NeoVim
+# -----------------------------------------------------
+function vuevim
+    env NVIM_APPNAME=vuevim nvim
+end
+
+function lazyvim
+    env NVIM_APPNAME=lazyvim nvim
+end
+
+// default lazyvim
+env NVIM_APPNAME=lazyvim
+
+
