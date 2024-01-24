@@ -22,7 +22,7 @@ require("lazy").setup({
 		{ import = "lazyvim.plugins.extras.lang.json" },
 		{ import = "lazyvim.plugins.extras.lang.markdown" },
 		{ import = "lazyvim.plugins.extras.lang.cmake" },
-		{ import = "lazyvim.plugins.extras.coding.copilot" },
+		-- { import = "lazyvim.plugins.extras.coding.copilot" },
 		-- import/override with your plugins
 		{ import = "plugins" },
 	},
