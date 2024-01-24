@@ -1,5 +1,5 @@
 local util = require("lspconfig.util")
-local have_vue = require("customLib.utils.have").have_vue()
+local have_vue = vim.env.MY_NVIM_APPNAME == "vuevim"
 
 local M = {}
 --  ╭──────────────────────────────────────────────────────────╮
