@@ -32,19 +32,28 @@ return {
 				},
 				volar = {
 					-- capabilities = require("plugins.LSP.vue").capabilities,
-					-- filetypes = require("customLib.LSP.vue").filetypes,
+					filetypes = require("customLib.LSP.vue").filetypes,
 					root_dir = require("customLib.LSP.vue").root_dir,
 					-- init_options = require("plugins.LSP.vue").init_options,
-					--on_new_config = require("lib.LSP.vue").on_new_config,
-					--settings = require("lib.LSP.vue").settings,
-					--on_attach = require("lib.LSP.vue").on_attach,
+					on_new_config = require("customLib.LSP.vue").on_new_config,
+					settings = require("customLib.LSP.vue").settings,
+					on_attach = require("customLib.LSP.vue").on_attach,
 				},
 				tsserver = {
+					filetypes = {
+						"javascript",
+						"javascriptreact",
+						"javascript.jsx",
+						"typescript",
+						"typescriptreact",
+						"typescript.tsx",
+					},
 					root_dir = function(...)
-						if vim.env.MY_NVIM_APPNAME == "lazyvim" then
+						local useTypeServer = require("customLib.utils.have").enabled_typescript_tools()
+						if useTypeServer then
 							return require("lspconfig.util").root_pattern(".git")(...)
 						else
-							return false
+							return ""
 						end
 					end,
 					single_file_support = false,
