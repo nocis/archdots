@@ -29,14 +29,8 @@ export NVM_DIR="$HOME/.nvm"
 # -----------------------------------------------------
 # NeoVim
 # -----------------------------------------------------
-function vuevim
-    export NVIM_APPNAME=vuevim && nvim
-end
-
-function lazyvim
-    export NVIM_APPNAME=lazyvim && nvim
-end
-
+alias vuevim="export NVIM_APPNAME=vuevim && nvim"
+alias lazyvim="export NVIM_APPNAME=lazyvim && nvim"
 // default lazyvim
 export NVIM_APPNAME=lazyvim
 
