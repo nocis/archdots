@@ -193,6 +193,13 @@ return {
 			setup = {
 				tsserver = function()
                                     require("lazyvim.util").lsp.on_attach(function(client, bufnr)
+							if vim.fn.has("nvim-0.8") == 1 then
+							    client.server_capabilities.documentFormattingProvider = false
+							    client.server_capabilities.documentRangeFormattingProvider = false
+							  else
+							    client.resolved_capabilities.document_formatting = false
+							    client.resolved_capabilities.document_range_formatting = false
+ 							 end
 							local make_diagnostics_handler = function(original_handler)
 							    return function(...)
 							        local config_or_client_id = select(4, ...)
