@@ -38,7 +38,7 @@ return {
 					on_new_config = require("customLib.LSP.vue").on_new_config,
 					settings = require("customLib.LSP.vue").settings,
 					on_attach = require("customLib.LSP.vue").on_attach,
-				--},
+				},
 				tsserver = {
 					filetypes = vim.env.MY_NVIM_APPNAME ~= "vuevim" and {
 						"javascript",
