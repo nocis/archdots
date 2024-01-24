@@ -206,8 +206,15 @@ return {
 			},
 			setup = {
 				volar = function()
-				    require'lspconfig'.volar.setup{}
-				end,
+				          require("lazyvim.util").lsp.on_attach(function(client)
+				            -- Don't use volar for formatting
+				            if client.name == "volar" then
+				              client.server_capabilities.documentFormatting = false
+				              -- client.server_capabilities.documentFeatures.documentFormatting = false
+				              client.server_capabilities.documentFormattingProvider = false
+				            end
+				          end)
+				        end,
 				tsserver = function()
 					require("lazyvim.util").lsp.on_attach(function(client, bufnr)
 						if vim.fn.has("nvim-0.8") == 1 then
