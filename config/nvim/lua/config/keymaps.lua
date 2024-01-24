@@ -36,28 +36,28 @@ keymap.set("n", "sv", ":split<Return>", opts)
 -- keymap.set("n", "sl", "<C-w>l")
 
 keymap.set("n", "<leader>r", function()
-	require("lib.craftzdog.hsl").replaceHexWithHSL()
+	require("customLib.craftzdog.hsl").replaceHexWithHSL()
 end)
 
 -- unstable pre release
 -- keymap.set("n", "<leader>i", function()
--- 	require("lib.craftzdog.lsp").toggleInlayHints()
+-- 	require("customLib.craftzdog.lsp").toggleInlayHints()
 -- end)
 
 -- Diagnostics
-vim.keymap.set('n', '<leader>i', function()
-    -- If we find a floating window, close it.
-    local found_float = false
-    for _, win in ipairs(vim.api.nvim_list_wins()) do
-        if vim.api.nvim_win_get_config(win).relative ~= '' then
-            vim.api.nvim_win_close(win, true)
-            found_float = true
-        end
-    end
+vim.keymap.set("n", "<leader>i", function()
+	-- If we find a floating window, close it.
+	local found_float = false
+	for _, win in ipairs(vim.api.nvim_list_wins()) do
+		if vim.api.nvim_win_get_config(win).relative ~= "" then
+			vim.api.nvim_win_close(win, true)
+			found_float = true
+		end
+	end
 
-    if found_float then
-        return
-    end
+	if found_float then
+		return
+	end
 
-    vim.diagnostic.open_float(nil, { focus = false, scope = 'cursor' })
-end, { desc = 'Toggle Diagnostics' })
+	vim.diagnostic.open_float(nil, { focus = false, scope = "cursor" })
+end, { desc = "Toggle Diagnostics" })

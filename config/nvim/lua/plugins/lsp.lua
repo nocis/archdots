@@ -32,8 +32,8 @@ return {
 				},
 				volar = {
 					-- capabilities = require("plugins.LSP.vue").capabilities,
-					--filetypes = require("lib.LSP.vue").filetypes,
-					root_dir = require("lib.LSP.vue").root_dir,
+					-- filetypes = require("customLib.LSP.vue").filetypes,
+					root_dir = require("customLib.LSP.vue").root_dir,
 					-- init_options = require("plugins.LSP.vue").init_options,
 					--on_new_config = require("lib.LSP.vue").on_new_config,
 					--settings = require("lib.LSP.vue").settings,
@@ -236,7 +236,7 @@ return {
 								-- Convert string severities to numbers
 								filter_out_diagnostics_by_severity = vim.tbl_map(function(severity)
 									if type(severity) == "string" then
-										return u.severities[severity]
+										return require("nvim-lsp-ts-utils.utils").severities[severity]
 									end
 
 									return severity
