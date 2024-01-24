@@ -32,12 +32,12 @@ return {
 				},
 				volar = {
 					-- capabilities = require("plugins.LSP.vue").capabilities,
-					filetypes = require("lib.LSP.vue").filetypes,
+					--filetypes = require("lib.LSP.vue").filetypes,
 					root_dir = require("lib.LSP.vue").root_dir,
 					-- init_options = require("plugins.LSP.vue").init_options,
-					on_new_config = require("lib.LSP.vue").on_new_config,
-					settings = require("lib.LSP.vue").settings,
-					on_attach = require("lib.LSP.vue").on_attach,
+					--on_new_config = require("lib.LSP.vue").on_new_config,
+					--settings = require("lib.LSP.vue").settings,
+					--on_attach = require("lib.LSP.vue").on_attach,
 				},
 				tsserver = {
 					root_dir = function(...)
