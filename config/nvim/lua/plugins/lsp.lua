@@ -34,12 +34,6 @@ return {
 						return require("lspconfig.util").root_pattern(".git")(...)
 					end,
 					single_file_support = false,
-					--on_attach = function(client, bufnr)
-                                         --               require('nvim-lsp-ts-utils').setup({
-                                          --                  filter_out_diagnostics_by_code = { 80001 },
-                                           --             })
-                                            --            require('nvim-lsp-ts-utils').setup_client(client)
-                                             --       end,
 					settings = {
 						typescript = {
 							inlayHints = {
@@ -139,7 +133,16 @@ return {
 					},
 				},
 			},
-			setup = {},
+			setup = {
+				tsserver = function()
+                                    require("lazyvim.util").lsp.on_attach(function(client, bufnr)
+                                                require('nvim-lsp-ts-utils').setup({
+                                                    filter_out_diagnostics_by_code = { 80001 },
+                                                })
+                                                require('nvim-lsp-ts-utils').setup_client(client)
+                                        end,)
+                               end,
+			},
 		},
 	},
 }
