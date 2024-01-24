@@ -11,6 +11,7 @@ return {
 				"shfmt",
 				"tailwindcss-language-server",
 				"typescript-language-server",
+				"vue-language-server",
 				"css-lsp",
 			})
 		end,
@@ -29,9 +30,28 @@ return {
 						return require("lspconfig.util").root_pattern(".git")(...)
 					end,
 				},
+				volar = {
+					capabilities = require("cmp_nvim_lsp").default_capabilities(),
+					filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'},
+					root_dir = function(...)
+						if vim.env.NVIM_APPNAME == "vuevim" then
+							return require("lspconfig.util").root_pattern(".git")(...)
+						else
+							return false
+						end						
+					end,
+					-- init_options = require("utils.volar").init_options,
+					on_new_config = require("utils.lsp.volar").on_new_config,
+					settings = require("utils.lsp.volar").settings,
+					on_attach = require("utils.lsp.volar").on_attach,
+				},
 				tsserver = {
 					root_dir = function(...)
-						return require("lspconfig.util").root_pattern(".git")(...)
+						if vim.env.NVIM_APPNAME == "lazyvim" then
+							return require("lspconfig.util").root_pattern(".git")(...)
+						else
+							return false
+						end						
 					end,
 					single_file_support = false,
 					settings = {
