@@ -53,7 +53,7 @@ return {
 						if useTypeServer then
 							return require("lspconfig.util").root_pattern(".git")(...)
 						else
-							return ""
+							return require("lspconfig.util").root_pattern(".none-exist-file")(...)
 						end
 					end,
 					single_file_support = false,
