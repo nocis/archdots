@@ -31,7 +31,7 @@ return {
 					end,
 				},
 				volar = {
-					capabilities = require("utils.volar").capabilities,
+					-- capabilities = require("utils.volar").capabilities,
 					filetypes = require("utils.lsp.volar").filetypes,
 					root_dir = require("utils.lsp.volar").root_dir,
 					init_options = require("utils.volar").init_options,
