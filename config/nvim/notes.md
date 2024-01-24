@@ -88,7 +88,11 @@
     confirm set .prettierrc
 
 25. LSP
-    .git folder as root dir
+    nvim-lsp set root dir for servers
 
 26. eslint
     package eslint install as eslint library
+
+27. javascript lint and auto import
+    required js/tsconfig.json
+    checkJs: true
