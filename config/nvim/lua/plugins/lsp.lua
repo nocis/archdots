@@ -189,7 +189,7 @@ return {
 							end
 							
 							local PUBLISH_DIAGNOSTICS = "textDocument/publishDiagnostics"
-						        local diagnostics_handler = client.handlers[PUBLISH_DIAGNOSTICS]
+						        local diagnostics_handler = client.handlers[PUBLISH_DIAGNOSTICS] or vim.lsp.handlers[PUBLISH_DIAGNOSTICS]
 							
 							client.handlers[PUBLISH_DIAGNOSTICS] = make_diagnostics_handler(diagnostics_handler)
                                         end)
