@@ -31,14 +31,18 @@ return {
 					end,
 				},
 				volar = {
+          -- Takeover mode https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#volar
+          filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
+        },
+				--volar = {
 					-- capabilities = require("plugins.LSP.vue").capabilities,
-					filetypes = require("customLib.LSP.vue").filetypes,
-					root_dir = require("customLib.LSP.vue").root_dir,
+					--filetypes = require("customLib.LSP.vue").filetypes,
+					--root_dir = require("customLib.LSP.vue").root_dir,
 					-- init_options = require("plugins.LSP.vue").init_options,
-					on_new_config = require("customLib.LSP.vue").on_new_config,
-					settings = require("customLib.LSP.vue").settings,
-					on_attach = require("customLib.LSP.vue").on_attach,
-				},
+					--on_new_config = require("customLib.LSP.vue").on_new_config,
+					--settings = require("customLib.LSP.vue").settings,
+					--on_attach = require("customLib.LSP.vue").on_attach,
+				--},
 				tsserver = {
 					filetypes = vim.env.MY_NVIM_APPNAME ~= "vuevim" and {
 						"javascript",
