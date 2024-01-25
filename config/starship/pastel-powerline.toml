@@ -33,7 +33,7 @@ $time\
 
 [custom.workspace]
 when = "true"
-command = 'echo fuck'
+command = 'echo $TERMINAL_WORKSPACE_NAME'
 format = '[\[$output\]]($style)'
 style = "bg:#9A348E"
 
