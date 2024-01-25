@@ -88,5 +88,5 @@ export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 # !:n : last cmd n-th parameter
 
 
-
-export HISTFILE=$HOME/.myhistfile.$$
+export TERMINAL_WORKSPACE_NAME=common
+export HISTFILE=${HOME}/.myhistfile.${TERMINAL_WORKSPACE_NAME}
