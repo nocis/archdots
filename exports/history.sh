@@ -7,7 +7,7 @@
 
 # Enable history expansion with space
 # E.g. typing !!<space> will replace the !! with your last command
-bind Space:magic-space
+bind Space:magic-space > /dev/null 2>&1
 
 # Use standard ISO 8601 timestamp
 # %F equivalent to %Y-%m-%d
@@ -34,8 +34,8 @@ export HISTFILESIZE=$HISTSIZE                   # big big history
 # Enable incremental history search with up/down arrows (also Readline goodness)
 # Learn more about this here: http://codeinthehole.com/writing/the-most-important-command-line-tip-incremental-history-searching-with-inputrc/
 # up down
-bind '"\e[A": history-search-backward'
-bind '"\e[B": history-search-forward'
+bind '"\e[A": history-search-backward' > /dev/null 2>&1
+bind '"\e[B": history-search-forward' > /dev/null 2>&1
 
 
 # System wide environment variables and startup programs should go into
