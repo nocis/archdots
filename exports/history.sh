@@ -1,0 +1,4 @@
+
+
+
+export HISTFILE=$HOME/.myhistfile.$$
