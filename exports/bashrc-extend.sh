@@ -3,7 +3,7 @@
 # -----------------------------------------------------
 # Alias
 # -----------------------------------------------------
-source ./bash-alias.sh
+source ~/.local/dotfiles/exports/bash-alias.sh
 
 
 
@@ -47,5 +47,5 @@ export MY_NVIM_APPNAME="lazyvim"
 # -----------------------------------------------------
 # History
 # -----------------------------------------------------
-source ./history.sh
+source ~/.local/dotfiles/exports/history.sh
 
