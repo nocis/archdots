@@ -98,4 +98,5 @@
     checkJs: true
     
 29. for vue lsp
-    install typescript and @vue/language-server
+    install typescript
+    @vue/language-server install default by mason
