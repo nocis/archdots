@@ -108,3 +108,6 @@
 
 31. lsp debug
     restart and see lsplog
+
+32. package.json
+    type module accept export from js
