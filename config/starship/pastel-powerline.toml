@@ -1,7 +1,7 @@
 format = """
 [](#9A348E)\
 $os\
-$custom.workspace\
+$custom\
 $username\
 [](bg:#DA627D fg:#9A348E)\
 $directory\
@@ -33,7 +33,7 @@ $time\
 
 [custom.workspace]
 command = 'echo $TERMINAL_WORKSPACE_NAME'
-format = '\([$output]\)'
+format = '\[[$output]($style)\]'
 
 # You can also replace your username with a neat symbol like   or disable this
 # and use the os module below
