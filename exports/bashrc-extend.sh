@@ -35,3 +35,9 @@ alias lazyvim="export MY_NVIM_APPNAME="lazyvim" && nvim"
 export MY_NVIM_APPNAME="lazyvim"
 
 
+
+# -----------------------------------------------------
+# History
+# -----------------------------------------------------
+source ./history.sh
+
