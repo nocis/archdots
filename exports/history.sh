@@ -3,9 +3,6 @@
 # -----------------------------------------------------
 
 
-# If not running interactively, don't do anything
-[ -z "$PS1" ] && return
-
 # Enable history expansion with space
 # E.g. typing !!<space> will replace the !! with your last command
 bind Space:magic-space
