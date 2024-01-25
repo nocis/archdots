@@ -32,7 +32,7 @@ $time\
 # add_newline = false
 
 [custom.workspace]
-disabled = false
+show_always = true
 command = 'echo fuck'
 format = '\[[$output]($style)\]'
 style = "bg:#9A348E"
