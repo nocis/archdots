@@ -100,3 +100,11 @@
 29. for vue lsp
     install typescript
     @vue/language-server install default by mason
+
+
+30. add missing import
+    feature from typescript LSP
+    need types exposed via tsconfig(all installed node modules by default)
+
+31. lsp debug
+    restart and see lsplog
