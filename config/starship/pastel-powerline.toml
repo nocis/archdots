@@ -1,6 +1,7 @@
 format = """
 [](#9A348E)\
 $os\
+${custom.workspace}\
 $username\
 [](bg:#DA627D fg:#9A348E)\
 $directory\
@@ -29,6 +30,12 @@ $time\
 
 # Disable the blank line at the start of the prompt
 # add_newline = false
+
+[custom.workspace]
+disabled = false
+command = 'echo fuck'
+format = '\[[$output]($style)\]'
+style = "bg:#9A348E"
 
 # You can also replace your username with a neat symbol like   or disable this
 # and use the os module below
