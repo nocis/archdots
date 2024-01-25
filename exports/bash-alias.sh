@@ -8,4 +8,4 @@ alias l='ls -CF'
 alias lh='ls -hal'
 
 # workspace
-alias workspace ='cd "$HOME/Workspace" && export TERMINAL_WORKSPACE_NAME=workspace'
+alias workspace='cd "$HOME/Workspace" && export TERMINAL_WORKSPACE_NAME=workspace'
