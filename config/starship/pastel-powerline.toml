@@ -32,7 +32,7 @@ $time\
 # add_newline = false
 
 [custom.workspace]
-command = 'echo $TERMINAL_WORKSPACE_NAME'
+command = 'echo fuck'
 format = '\[[$output]($style)\]'
 shell = ["bash"]
 style = "bg:#9A348E"
