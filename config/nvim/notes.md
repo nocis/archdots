@@ -105,9 +105,10 @@
 30. add missing import
     feature from typescript LSP
     need types exposed via tsconfig(all installed node modules by default)
+    Lsp and add import also works with out type module in package.json"
 
-31. lsp debug
+32. lsp debug
     restart and see lsplog
 
-32. package.json
+33. package.json
     type module accept export from js
