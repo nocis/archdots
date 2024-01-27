@@ -116,3 +116,6 @@
 
 33. package.json
     type module accept export from js
+
+34. visual
+    veeeee, incremental select words!!!
