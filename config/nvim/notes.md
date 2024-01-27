@@ -119,3 +119,4 @@
 
 34. visual
     veeeee, incremental select words!!!
+    bve, back to start,visual,eeeeeee
