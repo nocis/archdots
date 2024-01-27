@@ -66,34 +66,38 @@
     Ctrl-] to follow the link
 
 18. search
+    type /
+    type search term e.g. "var"
+    press enter
+    for next instance press n (for previous N)
     press `n`. If you want to search backward for the previous occurrence, press `N`.
 
-19. buffer
+20. buffer
     [b: prev buffer
     ]b: next buffer
 
-20. Rename
+21. Rename
     <leader>cr : rename prompt
 
-21. :qa quit all windows for quick open next time
+22. :qa quit all windows for quick open next time
 
-22. f find and jump, i will insert before search character
+23. f find and jump, i will insert before search character
     t find and jumo, i will insert after search character
-    ; will repeat(next match)
+    f or t will repeat(next match)
 
-23. completion
+24. completion
     <c-e> stop menu!
 
-24. format
+25. format
     confirm set .prettierrc
 
-25. LSP
+26. LSP
     nvim-lsp set root dir for servers
 
-26. eslint
+27. eslint
     package eslint install as eslint library
 
-27. javascript lint and auto import
+28. javascript lint and auto import
     required js/tsconfig.json
     checkJs: true
     
