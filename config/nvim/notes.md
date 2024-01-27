@@ -120,3 +120,5 @@
 34. visual
     veeeee, incremental select words!!!
     bve, back to start,visual,eeeeeee
+
+35. Press P (uppercase) to paste before your cursor.
