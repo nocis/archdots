@@ -3,3 +3,4 @@ _installSymbolicLink starship ~/.config/starship.toml ~/.local/dotfiles/config/s
 _installSymbolicLink nvimPlugin ~/.config/nvim/lua/plugins ~/.local/dotfiles/config/nvim/lua/plugins/ ~/.config/nvim/lua
 _installSymbolicLink nvimConfig ~/.config/nvim/lua/config ~/.local/dotfiles/config/nvim/lua/config/ ~/.config/nvim/lua
 _installSymbolicLink nvimCustomLib ~/.config/nvim/lua/customLib ~/.local/dotfiles/config/nvim/lua/customLib/ ~/.config/nvim/lua
+_installSymbolicLink nvimTemplates ~/.config/nvim-templates ~/.local/dotfiles/config/nvim-templates/ ~/.config
