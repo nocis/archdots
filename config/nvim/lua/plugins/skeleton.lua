@@ -1,0 +1,3 @@
+return {
+  "nocis/skeleton.nvim",
+}
