@@ -122,3 +122,6 @@
     bve, back to start,visual,eeeeeee
 
 35. Press P (uppercase) to paste before your cursor.
+
+36. diagnostic
+    <leader>sd: show document diagnostics
