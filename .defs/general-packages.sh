@@ -8,6 +8,7 @@ packagesPacman=(
     "fd"
     "ripgrep"
     "ttf-jetbrains-mono-nerd"
+    "ttf-nerd-fonts-symbols"
     "unzip"
     "acpi" # for battery.nvim
 )
