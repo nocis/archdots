@@ -15,6 +15,7 @@ packagesPacman=(
     "piprwire"
     "pipewire-alsa"
     "pipewire-pulse"
+    "alsa-utils"
 )
 
 packagesYay=(
