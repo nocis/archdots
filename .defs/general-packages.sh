@@ -13,6 +13,8 @@ packagesPacman=(
     "acpi" # for battery.nvim
     "wireplumber"
     "piprwire"
+    "pipewire-alsa"
+    "pipewire-pulse"
 )
 
 packagesYay=(
