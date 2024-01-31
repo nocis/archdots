@@ -11,6 +11,8 @@ packagesPacman=(
     "ttf-nerd-fonts-symbols"
     "unzip"
     "acpi" # for battery.nvim
+    "wireplumber"
+    "piprwire"
 )
 
 packagesYay=(
