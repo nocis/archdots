@@ -126,3 +126,6 @@
 36. diagnostic
     <leader>sd: show document diagnostics
     <leader>xx: Document Diagnostics (Trouble) --this is better
+
+37. notifications
+    <leader>un	Dismiss all Notifications
