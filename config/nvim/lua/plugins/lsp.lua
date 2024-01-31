@@ -13,6 +13,7 @@ return {
 				"typescript-language-server",
 				"vue-language-server",
 				"css-lsp",
+				"emmet_language_server",
 			})
 		end,
 	},
@@ -140,6 +141,7 @@ return {
 					},
 				},
 				html = {},
+				emmet_language_server = {},
 				yamlls = {
 					settings = {
 						yaml = {
