@@ -67,3 +67,10 @@ vim.keymap.set("n", "<leader>i", function()
 
 	vim.diagnostic.open_float(nil, { focus = false, scope = "cursor" })
 end, { desc = "Toggle Diagnostics" })
+
+-- nabla
+keymap.set("n", "<leader>p", function()
+	require("nabla").popup()
+end, {
+	desc = "nabla popup",
+})
