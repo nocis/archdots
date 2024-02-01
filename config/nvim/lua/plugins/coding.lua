@@ -44,7 +44,7 @@ return {
 		'echasnovski/mini.bracketed', 
     version = '*',
 		opts = {
-				buffer     = { suffix = 'b', options = {} },
+	buffer     = { suffix = 'b', options = {} },
         comment    = { suffix = '/', options = {} },
         conflict   = { suffix = 'x', options = {} },
         diagnostic = { suffix = 'd', options = {} },
