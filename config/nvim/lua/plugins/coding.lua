@@ -87,7 +87,6 @@ return {
 	-- colorize
 	{
 	    'norcalli/nvim-colorizer.lua', 
-	     event = 'VeryLazy',
              opts = {
                  filetypes = { '*', '!lazy',css = {css = true} }
              }
