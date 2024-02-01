@@ -20,4 +20,5 @@ packagesPacman=(
 
 packagesYay=(
     "pfetch"
+    "ttf-maple"
 )
