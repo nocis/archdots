@@ -79,6 +79,10 @@ return {
 					augend.constant.alias.bool,
 					augend.semver.alias.semver,
 					augend.constant.new({ elements = { "let", "const" } }),
+					augend.hexcolor.new({
+						case = "lower",
+					}),
+
 				},
 			})
 		end,
