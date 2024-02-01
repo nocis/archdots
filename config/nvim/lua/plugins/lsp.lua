@@ -126,7 +126,7 @@ return {
 							desc = "Add Missing Imports",
 						},
 						{
-							"<leader>cs",
+							"<leader>cS",
 							function()
 								vim.lsp.buf.code_action({
 									apply = true,
