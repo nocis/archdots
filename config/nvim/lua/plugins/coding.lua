@@ -45,7 +45,7 @@ return {
     version = '*',
 		opts = {
 				buffer     = { suffix = 'b', options = {} },
-        comment    = { suffix = 'c', options = {} },
+        comment    = { suffix = '/', options = {} },
         conflict   = { suffix = 'x', options = {} },
         diagnostic = { suffix = 'd', options = {} },
         file       = { suffix = '' },
@@ -54,7 +54,7 @@ return {
         location   = { suffix = 'l', options = {} },
         oldfile    = { suffix = '' },
         quickfix   = { suffix = '' },
-        treesitter = { suffix = 't', options = {} },
+        treesitter = { suffix = 'n', options = {} },
         undo       = { suffix = 'u', options = {} },
         window     = { suffix = '' },
         yank       = { suffix = '', },
