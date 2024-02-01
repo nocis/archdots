@@ -122,5 +122,22 @@ return {
 			})
 		end,
 	},
+	
+	-- math tex
+	{
+		"jbyuki/nabla.nvim",
+		dependencies = { "nvim-treesitter/nvim-treesitter" },
+	},
+	
+	-- add more treesitter parsers
+	{
+		"nvim-treesitter/nvim-treesitter",
+		opts = function(_, opts)
+			vim.list_extend(opts.ensure_installed, {
+				"latex",
+			})
+		end,
+	},
+
 
 }
