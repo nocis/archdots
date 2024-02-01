@@ -55,9 +55,9 @@ return {
         oldfile    = { suffix = '' },
         quickfix   = { suffix = '' },
         treesitter = { suffix = 'n', options = {} },
-        undo       = { suffix = 'u', options = {} },
+        undo       = { suffix = '' },
         window     = { suffix = '' },
-        yank       = { suffix = '', },
+        yank       = { suffix = '' },
     },
 	},
 
