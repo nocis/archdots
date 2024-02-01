@@ -3,14 +3,14 @@ local opts = { noremap = true, silent = true }
 
 -- Increment/decrement
 -- n: normal mode
-keymap.set("n", "<C-a>", function()
+keymap.set("n", "<kPlus>", function()
     require("dial.map").manipulate("increment", "normal")
 end)
-keymap.set("n", "<C-x>", function()
+keymap.set("n", "<kMinus>", function()
     require("dial.map").manipulate("decrement", "normal")
 end)
-keymap.set("n", "<kPlus>", "<C-a>")
-keymap.set("n", "<kMinus>", "<C-x>")
+-- keymap.set("n", "<kPlus>", "<C-a>")
+-- keymap.set("n", "<kMinus>", "<C-x>")
 
 -- Delete a word backwards
 keymap.set("n", "dw", 'vb"_d')
