@@ -87,8 +87,8 @@ return {
 	-- colorize
 	{
 	    'norcalli/nvim-colorizer.lua', 
-             opts = {
-                 filetypes = { '*', '!lazy',css = {css = true} }
-             }
+	    config = function()
+                require("colorizer").setup({ '*', '!lazy', css = {css = true} })
+            end,
 	},
 }
