@@ -3,6 +3,12 @@ local opts = { noremap = true, silent = true }
 
 -- Increment/decrement
 -- n: normal mode
+keymap.set("n", "<C-a>", function()
+    require("dial.map").manipulate("increment", "normal")
+end)
+keymap.set("n", "<C-x>", function()
+    require("dial.map").manipulate("decrement", "normal")
+end)
 keymap.set("n", "<kPlus>", "<C-a>")
 keymap.set("n", "<kMinus>", "<C-x>")
 
