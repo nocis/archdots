@@ -12,7 +12,7 @@ packagesPacman=(
     "unzip"
     "acpi" # for battery.nvim
     "wireplumber"
-    "piprwire"
+    "pipewire"
     "pipewire-alsa"
     "pipewire-pulse"
     "alsa-utils"
