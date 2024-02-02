@@ -41,9 +41,9 @@ keymap.set("n", "sv", ":split<Return>", opts)
 -- keymap.set("n", "sj", "<C-w>j")
 -- keymap.set("n", "sl", "<C-w>l")
 
-keymap.set("n", "<leader>r", function()
-	require("customLib.craftzdog.hsl").replaceHexWithHSL()
-end)
+-- keymap.set("n", "<leader>r", function()
+--	require("customLib.craftzdog.hsl").replaceHexWithHSL()
+-- end)
 
 -- unstable pre release
 -- keymap.set("n", "<leader>i", function()
