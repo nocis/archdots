@@ -164,6 +164,11 @@ return {
 			telescope.setup(opts)
 			require("telescope").load_extension("fzf")
 			require("telescope").load_extension("file_browser")
+			require("which-key").register({
+                               [";"] = {
+                                       name = "+telescope",
+                               },
+                        }, { prefix = "<leader>" })
 		end,
 	},
 }
