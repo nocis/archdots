@@ -1,0 +1,7 @@
+[user]
+	name = nocis
+	email = nocis@github.com
+[core]
+	autocrlf = input
+[merge]
+  conflictStyle = diff3
