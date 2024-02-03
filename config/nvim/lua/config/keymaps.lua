@@ -74,3 +74,11 @@ keymap.set("n", "<leader>p", function()
 end, {
 	desc = "nabla popup",
 })
+
+
+-- git
+keymap.set("n", "<leader>gb", function()
+	require("gitsigns.actions").toggle_current_line_blame()
+end, {
+	desc = "toggle git blame",
+})
