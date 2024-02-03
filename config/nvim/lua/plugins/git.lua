@@ -1,11 +1,11 @@
 return {
-	{
-		"tpope/vim-fugitive",
-	},
-	{
-		-- amongst your other plugins
-		{ "akinsho/toggleterm.nvim", version = "*", config = true },
-	},
+	-- {
+	-- 	"tpope/vim-fugitive",
+	-- },
+	-- {
+	-- 	-- amongst your other plugins
+	-- 	{ "akinsho/toggleterm.nvim", version = "*", config = true },
+	-- },
 	{
 		"samoshkin/vim-mergetool",
 		config = function()
