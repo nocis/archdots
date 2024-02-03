@@ -82,3 +82,14 @@ keymap.set("n", "<leader>gb", function()
 end, {
 	desc = "toggle git blame",
 })
+keymap.set("n", "<leader>gp", function()
+	require("gitsigns.actions").preview_hunk()
+end, {
+	desc = "Preview Hunk",
+})
+keymap.set("n", "<leader>gP", function()
+	require("gitsigns.actions").preview_hunk_inline()
+end, {
+	desc = "Preview Hunk Inline",
+})
+
