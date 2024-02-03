@@ -2,6 +2,7 @@ packagesPacman=(
     "chromium"
     "neovim"
     "alacritty"
+    "lazygit"
     "thunar" # file manager
     "network-manager-applet"
     "starship"
