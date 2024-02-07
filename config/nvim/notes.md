@@ -70,52 +70,54 @@
 17. Search and highlight : /
     keep search result and back to normal: <enter>
     Escape and clear hlsearch: <esc>
+    n for next N for back
+    * for search current
 
-18. help
+19. help
     Ctrl-] to follow the link
 
-19. search
+20. search
     type /
     type search term e.g. "var"
     press enter
     for next instance press n (for previous N)
     press `n`. If you want to search backward for the previous occurrence, press `N`.
 
-20. buffer
+21. buffer
     [b: prev buffer
     ]b: next buffer
 
-21. Rename
+22. Rename
     <leader>cr : rename prompt
 
-22. :qa quit all windows for quick open next time
+23. :qa quit all windows for quick open next time
 
-23. f find and jump, i will insert before search character
+24. f find and jump, i will insert before search character
     t find and jumo, i will insert after search character
     f or t will repeat(next match)
 
-24. completion
+25. completion
     <c-e> stop menu!
 
-25. format
+26. format
     confirm set .prettierrc
 
-26. LSP
+27. LSP
     nvim-lsp set root dir for servers
 
-27. eslint
+28. eslint
     package eslint install as eslint library
 
-28. javascript lint and auto import
+29. javascript lint and auto import
     required js/tsconfig.json
     checkJs: true
     
-29. for vue lsp
+30. for vue lsp
     install typescript
     @vue/language-server install default by mason
 
 
-30. add missing import
+31. add missing import
     feature from typescript LSP
     need types exposed via tsconfig(all installed node modules by default)
     Lsp and add import also works with out type module in package.json"
