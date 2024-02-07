@@ -13,7 +13,6 @@ return {
 				"typescript-language-server",
 				"vue-language-server",
 				"css-lsp",
-				"emmet-language-server",
 			})
 		end,
 	},
