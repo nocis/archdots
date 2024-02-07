@@ -12,6 +12,8 @@
 4. move
    begin:0, end:$, insert after:a, last word: b, next word:w
    down block:<c-D>, up block: <c-U>
+   ^ - jump to the first non-blank character of the line
+   $ - jump to the end of the line
 
 5. neotree deletebuffer file
    <leader>: SPACE
