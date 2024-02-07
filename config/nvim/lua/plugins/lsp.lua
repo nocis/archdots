@@ -25,7 +25,9 @@ return {
 			inlay_hints = { enabled = false },
 			--@type lspconfig.options
 			servers = {
-				cssls = {},
+				cssls = {
+					filetypes = { "css", "scss", "less" },
+				},
 				tailwindcss = {
 					root_dir = function(...)
 						return require("lspconfig.util").root_pattern(".git")(...)
@@ -140,8 +142,23 @@ return {
 						},
 					},
 				},
-				html = {},
-				emmet_language_server = {},
+				html = {
+					init_options = {
+						configurationSection = { "html", "css", "javascript" },
+						embeddedLanguages = {
+							css = true,
+							javascript = true,
+						},
+						provideFormatter = false,
+					},
+					settings = {
+						css = {
+							lint = {
+								validProperties = {},
+							},
+						},
+					},
+				},
 				yamlls = {
 					settings = {
 						yaml = {
