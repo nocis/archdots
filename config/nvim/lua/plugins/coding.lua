@@ -34,24 +34,24 @@ return {
 
 	-- Go forward/backward with square brackets
 	{
-		'echasnovski/mini.bracketed', 
-    version = '*',
+		"echasnovski/mini.bracketed",
+		version = "*",
 		opts = {
-	buffer     = { suffix = 'b', options = {} },
-        comment    = { suffix = '/', options = {} },
-        conflict   = { suffix = 'x', options = {} },
-        diagnostic = { suffix = 'd', options = {} },
-        file       = { suffix = '' },
-        indent     = { suffix = 'i', options = {} },
-        jump       = { suffix = 'j', options = {} },
-        location   = { suffix = 'l', options = {} },
-        oldfile    = { suffix = '' },
-        quickfix   = { suffix = '' },
-        treesitter = { suffix = 'n', options = {} },
-        undo       = { suffix = '' },
-        window     = { suffix = '' },
-        yank       = { suffix = '' },
-    },
+			buffer = { suffix = "b", options = {} },
+			comment = { suffix = "/", options = {} },
+			conflict = { suffix = "x", options = {} },
+			diagnostic = { suffix = "d", options = {} },
+			file = { suffix = "" },
+			indent = { suffix = "i", options = {} },
+			jump = { suffix = "j", options = {} },
+			location = { suffix = "l", options = {} },
+			oldfile = { suffix = "" },
+			quickfix = { suffix = "" },
+			treesitter = { suffix = "n", options = {} },
+			undo = { suffix = "" },
+			window = { suffix = "" },
+			yank = { suffix = "" },
+		},
 	},
 
 	-- Better increase/descrease
@@ -59,8 +59,8 @@ return {
 		"monaqa/dial.nvim",
     -- stylua: ignore
     keys = {
-     -- { "<C-a>", function() return require("dial.map").inc_normal() end, expr = true, desc = "Increment" },
-     -- { "<C-x>", function() return require("dial.map").dec_normal() end, expr = true, desc = "Decrement" },
+      -- { "<C-a>", function() return require("dial.map").inc_normal() end, expr = true, desc = "Increment" },
+      -- { "<C-x>", function() return require("dial.map").dec_normal() end, expr = true, desc = "Decrement" },
     },
 		config = function()
 			local augend = require("dial.augend")
@@ -75,19 +75,22 @@ return {
 					augend.hexcolor.new({
 						case = "lower",
 					}),
-
 				},
 			})
 		end,
 	},
 
 	-- colorize
-		{
+	{
 		"NvChad/nvim-colorizer.lua",
 		event = { "BufReadPost", "InsertEnter", "VeryLazy" },
 		config = function()
 			require("colorizer").setup({
-				filetypes = { "*", "!lazy", css = { css = true, names = true } },
+				filetypes = {
+					"*",
+					"!lazy",
+					css = { css = true, rgb_fn = true, hsl_fn = true, RRGGBBAA = true, names = true },
+				},
 				user_default_options = {
 					RGB = true, -- #RGB hex codes
 					RRGGBB = true, -- #RRGGBB hex codes
@@ -115,22 +118,21 @@ return {
 			})
 		end,
 	},
-	
+
 	-- math tex
 	{
 		"jbyuki/nabla.nvim",
 		dependencies = { "nvim-treesitter/nvim-treesitter" },
 	},
-	
+
 	-- add more treesitter parsers
 	{
 		"nvim-treesitter/nvim-treesitter",
 		opts = function(_, opts)
 			vim.list_extend(opts.ensure_installed, {
 				"latex",
+				"css",
 			})
 		end,
 	},
-
-
 }
