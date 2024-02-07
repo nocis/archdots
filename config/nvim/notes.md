@@ -31,8 +31,15 @@
 8. copy from register (ie. *) : "*p
 
 9. search repalce: :%s/old/new/c
+   Once you selected the lines to replace, type your command:
 
-10. LSP
+   :s/<search_string>/<replace_string>/g
+   You'll note that the range '<,'> will be inserted automatically for you:
+
+   :'<,'>s/<search_string>/<replace_string>/g
+   Here '< simply means first highlighted line, and '> means last highlighted line.
+
+11. LSP
     <leader>cl Lsp Info
     gd Goto Definition
     gr References
@@ -42,30 +49,30 @@
     K Hover
     <leader>cr Rename
 
-11. buffer
+12. buffer
     <leader>bd delete current buffer
 
-12. mark
+13. mark
     open jump list: `
     add mark a: ma (mb mc ....)
     delete mark :delmarks a
 
-13. print current file path: <c-g>
+14. print current file path: <c-g>
 
-14. comment out:
+15. comment out:
     gc
 
-15. hjkl: better way to move cursor，10j：down 10 lines
+16. hjkl: better way to move cursor，10j：down 10 lines
     HL : move tab, K: hover J: trailing line
 
-16. Search and highlight : /
+17. Search and highlight : /
     keep search result and back to normal: <enter>
     Escape and clear hlsearch: <esc>
 
-17. help
+18. help
     Ctrl-] to follow the link
 
-18. search
+19. search
     type /
     type search term e.g. "var"
     press enter
