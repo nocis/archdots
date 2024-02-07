@@ -39,6 +39,8 @@
    :'<,'>s/<search_string>/<replace_string>/g
    Here '< simply means first highlighted line, and '> means last highlighted line.
 
+   Use \r instead of \n for new line
+
 11. LSP
     <leader>cl Lsp Info
     gd Goto Definition
