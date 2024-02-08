@@ -181,3 +181,25 @@
     | Undo states from specially tracked linear history | `[U` `[u` `]u` `]U` | `MiniBracketed.undo()`       |
     | Window in current tab                             | `[W` `[w` `]w` `]W` | `MiniBracketed.window()`     |
     | Yank selection replacing latest put region        | `[Y` `[y` `]y` `]Y` | `MiniBracketed.yank()`       |
+
+
+
+
+
+  40. edit multiple lines
+A:
+Move the cursor to the n in name.
+Enter visual block mode (Ctrlv).
+Press j three times (or 3j) to jump down by 3 lines; G (capital g) to jump to the last line
+Press I (capital i).
+Type in vendor_. Note: It will only update the screen in the first line - until Esc is pressed (6.), at which point all lines will be updated.
+Press Esc.
+
+B:
+Move the cursor where you want to start
+Press i
+Type in the prefix you want (e.g. vendor_)
+Press esc.
+Press j to go down a line
+Type . to repeat the last edit, automatically inserting the prefix again
+Alternate quickly between j and .
