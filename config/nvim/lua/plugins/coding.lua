@@ -90,6 +90,7 @@ return {
 					"*",
 					"!lazy",
 					css = { css = true, rgb_fn = true, hsl_fn = true, RRGGBBAA = true, names = true },
+					html = { css = true, rgb_fn = true, hsl_fn = true, RRGGBBAA = true, names = true },
 				},
 				user_default_options = {
 					RGB = true, -- #RGB hex codes
