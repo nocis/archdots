@@ -8,6 +8,7 @@ return {
 				build = "make",
 			},
 			"nvim-telescope/telescope-file-browser.nvim",
+			"nocis/telescope-media-files.nvim",
 		},
 		keys = {
 			{
@@ -105,6 +106,30 @@ return {
 				end,
 				desc = "Open File Browser with the path of the current buffer",
 			},
+			{
+				"sr",
+				function()
+					local telescope = require("telescope")
+
+					local function telescope_buffer_dir()
+						return vim.fn.expand("%:p:h")
+					end
+
+					telescope.extensions.file_browser.file_browser({
+						path = "%:p:h",
+						cwd = telescope_buffer_dir(),
+						respect_gitignore = false,
+						hidden = true,
+						grouped = true,
+						initial_mode = "normal",
+						layout_config = { height = 40 },
+						previewer = telescope.extensions.media_files.media_preview.new({
+							cwd = telescope_buffer_dir(),
+						}),
+					})
+				end,
+				desc = "Open File Browser with the path of the current buffer, and media preview",
+			},
 		},
 		config = function(_, opts)
 			local telescope = require("telescope")
@@ -135,6 +160,7 @@ return {
 					-- theme = "dropdown",
 					-- disables netrw and use telescope-file-browser in its place
 					hijack_netrw = true,
+
 					mappings = {
 						-- your custom insert mode mappings
 						["n"] = {
@@ -164,6 +190,7 @@ return {
 			telescope.setup(opts)
 			require("telescope").load_extension("fzf")
 			require("telescope").load_extension("file_browser")
+			require("telescope").load_extension("media_files")
 			require("which-key").register({
 				[";"] = {
 					name = "+telescope",
