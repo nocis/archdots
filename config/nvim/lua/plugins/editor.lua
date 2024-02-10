@@ -99,7 +99,6 @@ return {
 						respect_gitignore = false,
 						hidden = true,
 						grouped = true,
-						previewer = false,
 						initial_mode = "normal",
 						layout_config = { height = 40 },
 					})
@@ -127,13 +126,13 @@ return {
 					theme = "ivy",
 					initial_mode = "normal",
 					layout_config = {
-						preview_cutoff = 9999,
+						-- preview_cutoff = 9999,
 					},
 				},
 			}
 			opts.extensions = {
 				file_browser = {
-					theme = "dropdown",
+					-- theme = "dropdown",
 					-- disables netrw and use telescope-file-browser in its place
 					hijack_netrw = true,
 					mappings = {
@@ -155,6 +154,7 @@ return {
 									actions.move_selection_next(prompt_bufnr)
 								end
 							end,
+							["<C-p>"] = require("telescope.actions.layout").toggle_preview,
 							["<PageUp>"] = actions.preview_scrolling_up,
 							["<PageDown>"] = actions.preview_scrolling_down,
 						},
@@ -165,10 +165,10 @@ return {
 			require("telescope").load_extension("fzf")
 			require("telescope").load_extension("file_browser")
 			require("which-key").register({
-                               [";"] = {
-                                       name = "+telescope",
-                               },
-                        }, { prefix = "<leader>" })
+				[";"] = {
+					name = "+telescope",
+				},
+			}, { prefix = "<leader>" })
 		end,
 	},
 }
