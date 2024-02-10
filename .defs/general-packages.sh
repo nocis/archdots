@@ -1,6 +1,8 @@
 packagesPacman=(
     "chromium"
     "neovim"
+    "chafa" # vim img viewer
+    "imagemagick" # vim svg viewer
     "alacritty"
     "lazygit"
     "thunar" # file manager
