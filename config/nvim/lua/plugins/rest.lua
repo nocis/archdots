@@ -56,15 +56,14 @@ return{
         vim.keymap.set("n", "<leader>rn", "<Plug>RestNvim<CR>", { noremap = true, buffer = buff, desc = "RestNvim" })
         vim.keymap.set("n", "<leader>rl", "<Plug>RestNvimLast<CR>", { noremap = true, buffer = buff, desc = "RestNvimLast" })
         vim.keymap.set("n", "<leader>rp", "<Plug>RestNvimPreview<CR>", { noremap = true, buffer = buff, desc = "RestNvimWithPreview" })
+	require("which-key").register({
+		["r"] = {
+			name = "+rest",
+		},
+	}, { prefix = "<leader>" })
     end
     })
-
-   require("which-key").register({
-				["r"] = {
-					name = "+rest",
-				},
-			}, { prefix = "<leader>" })
-
+			
   end
 },
 }
