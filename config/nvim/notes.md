@@ -203,3 +203,7 @@ Press esc.
 Press j to go down a line
 Type . to repeat the last edit, automatically inserting the prefix again
 Alternate quickly between j and .
+
+
+41. folding
+    zc fold za unfold
