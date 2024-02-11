@@ -17,7 +17,6 @@ require("conform").formatters.prettier = {
          json = "json",
          jsonc = "json",
          yaml = "yaml",
-         cpp = "cpp",
          markdown = "markdown",
     --     ["markdown.mdx"] = "mdx",
     --     graphql = "graphql",
