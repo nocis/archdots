@@ -8,6 +8,7 @@ packagesPacman=(
     "rust"  # vim cargo cmake
     "luarocks" # vim lua check
     "clang" # clang
+    "cmake" # cmake
     "alacritty"
     "lazygit"
     "thunar" # file manager
