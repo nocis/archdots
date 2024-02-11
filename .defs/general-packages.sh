@@ -5,6 +5,8 @@ packagesPacman=(
     "imagemagick" # vim svg viewer
     "jq"    # vim http json  
     "tidy"  # vim http html
+    "rust"  # vim cargo cmake
+    "luarocks" # vim lua check
     "alacritty"
     "lazygit"
     "thunar" # file manager
