@@ -3,6 +3,8 @@ packagesPacman=(
     "neovim"
     "chafa" # vim img viewer
     "imagemagick" # vim svg viewer
+    "jq"    # vim http json  
+    "tidy"  # vim http html
     "alacritty"
     "lazygit"
     "thunar" # file manager
