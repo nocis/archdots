@@ -18,6 +18,9 @@ echo ""
 # alias pmu="sudo pacman -Syu"  
 # alias pmr="sudo pacman -Rcns"
 
+# font debug
+# FC_DEBUG=4 pango-view -t ✘ | grep family: > font_debug.txt 2>&1
+
 cd $HOME/.local
 
 # 0. save root password
