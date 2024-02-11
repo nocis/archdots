@@ -13,6 +13,7 @@ return {
 				"typescript-language-server",
 				"vue-language-server",
 				"css-lsp",
+				"clang-format",
 			})
 		end,
 	},
