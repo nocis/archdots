@@ -17,6 +17,7 @@ require("conform").formatters.prettier = {
          json = "json",
          jsonc = "json",
          yaml = "yaml",
+         cpp = "cpp",
          markdown = "markdown",
     --     ["markdown.mdx"] = "mdx",
     --     graphql = "graphql",
@@ -46,4 +47,5 @@ require("conform").formatters_by_ft = {
       ["markdown.mdx"] = { "prettier" },
       ["graphql"] = { "prettier" },
       ["handlebars"] = { "prettier" },
+      ["cpp"] = { "clang_format" },
     }
