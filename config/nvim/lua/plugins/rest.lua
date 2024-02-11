@@ -47,6 +47,18 @@ return{
       yank_dry_run = true,
       search_back = true,
     })
+
+   -- http
+    vim.api.nvim_create_autocmd("FileType", {
+    pattern = "http",
+    callback = function ()
+        local buff = tonumber(vim.fn.expand("<abuf>"), 10)
+        vim.keymap.set("n", "<leader>rn", "<Plug>RestNvim<CR>", { noremap = true, buffer = buff, desc = "RestNvim" })
+        vim.keymap.set("n", "<leader>rl", "<Plug>RestNvimLast<CR>", { noremap = true, buffer = buff, desc = "RestNvimLast" })
+        vim.keymap.set("n", "<leader>rp", "<Plug>RestNvimPreview<CR>", { noremap = true, buffer = buff, desc = "RestNvimWithPreview" })
+    end
+    })
+
   end
 },
 }
