@@ -59,6 +59,12 @@ return{
     end
     })
 
+   require("which-key").register({
+				["r"] = {
+					name = "+rest",
+				},
+			}, { prefix = "<leader>" })
+
   end
 },
 }
