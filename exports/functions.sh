@@ -54,6 +54,7 @@ cmake "${cmake_opts[@]}" ..
 
 cd ..
 TMP_SRC_DIR="$PWD"
+rm $PWD/compile_commands.json
 
 if command -v fd >/dev/null
 then
