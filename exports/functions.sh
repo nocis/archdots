@@ -19,3 +19,10 @@ check_installed()
         echo -e "\e[1;32m [$1 is installed] \e[0m"
     fi
 }
+
+# 0. find executable
+function findexe() {
+  for ARG in $(pacman -Qql $1); do
+    [ ! -d $ARG ] && [ -x $ARG ] && echo $ARG;
+  done
+}
