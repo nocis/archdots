@@ -207,3 +207,6 @@ Alternate quickly between j and .
 
 41. folding
     zc fold za unfold
+
+42: command line
+    <C-n> <C-p>
