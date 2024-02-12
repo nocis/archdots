@@ -22,7 +22,7 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("BufWritePost", {
 	pattern = 'CMakeLists.txt',
 	callback = function()
-		vim.fn.system({'. build.sh'})
+		vim.fn.system({".", "build.sh"})
 	end,
 })
 
