@@ -77,3 +77,16 @@ REPLACEMENT
 bar
 line 6
 line 7
+
+
+cat .gitmodules | sed -n 's/^\s*url = \(\S*\) */git submodule add \1/p' | bash
+Explanation:
+
+cat .gitmodules          # output file content
+sed -n                   # output only the relevant lines
+'s/regEx/replacement/p'  # print the 'replacement' of the 'regEx'
+^\s*url =                # look for lines starting with [whitespace]url = 
+                         # but not, e.g., with #[whitespace]
+\(\S*\) *                # capture all characters, ignore trailing [space] 
+git submodule add \1     # append the captured URL to the git command
+bash                     # execute the command
