@@ -16,7 +16,7 @@ export HISTTIMEFORMAT='%F %T '
 
 # keep history up to date, across sessions, in realtime
 #  http://unix.stackexchange.com/a/48113
-export HISTCONTROL="ignorespace:ignoredups"       
+export HISTCONTROL="ignorespace:ignoredups:erasedups"       
 # no duplicate entries, but keep space-prefixed commands. (bash-sensible uses "erasedups:ignoreboth" but i think i validated this already?)
 
 
@@ -72,8 +72,8 @@ shopt -s \
 export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear"
 
 # Save and reload the history after each command finishes. Also look for any conflicting prompt_command definitions!!
-export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
-# export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+# export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
 # ^ the only downside with this is [up] on the readline will go over all history not just this bash session.
 
