@@ -1,3 +1,4 @@
+return {
 {
   "stevearc/conform.nvim",
   opts = {
@@ -21,4 +22,5 @@
       ["cpp"] = { "clang_format" },
     },
   },
+},
 }
