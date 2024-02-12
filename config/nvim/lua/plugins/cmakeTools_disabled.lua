@@ -1,6 +1,7 @@
 return {
 	{
 		"Civitasv/cmake-tools.nvim",
+		enabled = false,
 		config = function()
 			require("cmake-tools").setup({
 				cmake_command = "cmake", -- this is used to specify cmake command path
