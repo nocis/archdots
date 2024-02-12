@@ -57,7 +57,7 @@ TMP_SRC_DIR="$PWD"
 
 if command -v fd >/dev/null
 then
-    FILES=$(fd -H -t f -F "compile_commands.json" $TMP_SRC_DIR/build/)
+    FILES=$(fd -u -H -t f -F "compile_commands.json" $TMP_SRC_DIR/build/)
 else
     FILES=$(find $TMP_SRC_DIR/build -name "compile_commands.json")
 fi
