@@ -39,15 +39,18 @@ cat <<'EOT' >> build.sh
 #!/bin/bash
 mkdir build
 cd build
-cmake \
- # -DQt5_DIR="/path/to/Qt5.6/" \
- -DCMAKE_EXPORT_COMPILE_COMMANDS=1 \
- -DCMAKE_C_COMPILER=/usr/bin/clang \
- -DCMAKE_CXX_COMPILER=/usr/bin/clang++ \
- -DCMAKE_BUILD_TYPE=Debug \
- -DCMAKE_INSTALL_PREFIX:PATH="$(dirname $PWD)/dist/" \
- -DCMAKE_PREFIX_PATH="thirdparty" \
- ..
+echo "Building in $(dirname $PWD)"
+cmake_opts=(
+	# -DQt5_DIR="/path/to/Qt5.6/"
+	-DCMAKE_EXPORT_COMPILE_COMMANDS=1
+	-DCMAKE_C_COMPILER="/usr/bin/clang"
+	-DCMAKE_CXX_COMPILER="/usr/bin/clang++"
+	-DCMAKE_BUILD_TYPE=Debug
+	-DCMAKE_INSTALL_PREFIX:PATH="$(dirname $PWD)/dist/"
+	-DCMAKE_PREFIX_PATH="thirdparty" 
+)
+
+cmake "${cmake_opts[@]}" ..
 
 cd ..
 TMP_SRC_DIR="$PWD"
