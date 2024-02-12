@@ -21,7 +21,7 @@ vim.api.nvim_create_autocmd("FileType", {
 -- run camke
 vim.api.nvim_create_autocmd("BufWritePost", {
 	pattern = 'CMakeLists.txt',
-	command = ':!bash build.sh<CR>'
+	command = '. build.sh'
 })
 
 vim.api.nvim_create_autocmd({ "FileType" }, {
