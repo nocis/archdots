@@ -27,6 +27,9 @@ packagesPacman=(
     "alsa-utils"
     # "vulkan-devel"
     # "vulkan-radeon"
+    # "glfw-wayland"
+    # "glm"
+    # "shaderc"
 )
 
 packagesYay=(
