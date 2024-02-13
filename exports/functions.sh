@@ -41,6 +41,7 @@ mkdir build
 cd build
 echo "Building in $(dirname $PWD)"
 cmake_opts=(
+        -B "$PWD/out/"
 	# -DQt5_DIR="/path/to/Qt5.6/"
 	-DCMAKE_EXPORT_COMPILE_COMMANDS=1
 	-DCMAKE_C_COMPILER="/usr/bin/clang"
