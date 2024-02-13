@@ -84,6 +84,8 @@ do
     fi
 done
 
+
+# cmake --build build/out --target all -- -j 8
 EOT
 
 cat <<'EOT' >> CMakeLists.txt
