@@ -27,7 +27,12 @@ function findexe() {
   done
 }
 
-# 2. cmake-init
+# 2. clear nvim swap
+function nvim-clear-swap() {
+  rm ~/.local/state/nvim/swap/*
+}
+
+# 3. cmake-init
 function cmake-init {
 
 if [ ! -d .git ]; then
