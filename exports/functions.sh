@@ -59,13 +59,13 @@ rm $PWD/compile_commands.json
 
 if command -v fd >/dev/null
 then
-    FILES=$(fd -u -H -t f -F "compile_commands.json" $TMP_SRC_DIR/build/)
+    FILES=$(fd -u -H -t f -F "compile_commands.json" $TMP_SRC_DIR/build/out/)
 else
     FILES=$(find $TMP_SRC_DIR/build -name "compile_commands.json")
 fi
 
 TARGETS=($(echo $FILES))
-LINK_NAMES=( $(echo $FILES | sed "s:$TMP_SRC_DIR/build/:$TMP_SRC_DIR/:g") )
+LINK_NAMES=( $(echo $FILES | sed "s:$TMP_SRC_DIR/build/out/:$TMP_SRC_DIR/:g") )
 
 for i in ${!TARGETS[*]}
 do
