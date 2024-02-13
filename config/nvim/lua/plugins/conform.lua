@@ -20,6 +20,7 @@ return {
       ["graphql"] = { "prettier" },
       ["handlebars"] = { "prettier" },
       ["cpp"] = { "clang_format" },
+      ["cmake"] = { "cmake_format" },
     },
   },
 },
