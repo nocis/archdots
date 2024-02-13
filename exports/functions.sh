@@ -95,12 +95,15 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/../lib)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/../lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/../bin)
 
+project(HelloWorld)
+
 include(FetchContent)
 FetchContent_Declare(
   NCmake
   GIT_REPOSITORY git@github.com:nocis/NCmake.git
-  GIT_TAG        main
-)
+  GIT_TAG main)
 FetchContent_MakeAvailable(NCmake)
+nocis_init_git()
+nocis_update_modules()
 EOT
 }
