@@ -25,6 +25,7 @@ packagesPacman=(
     "pipewire-alsa"
     "pipewire-pulse"
     "alsa-utils"
+    "vulkan-devel"
 )
 
 packagesYay=(
