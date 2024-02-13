@@ -28,7 +28,7 @@ vim.api.nvim_create_autocmd("BufWritePost", {
                     print(obj.stdout)
                     print(obj.stderr)
                 end
-		vim.system({"bash", "build.sh"}, { text = true }, on_exit)
+		vim.fn.system({"bash", "build.sh"}, { text = true }, on_exit)
 	end,
 })
 
