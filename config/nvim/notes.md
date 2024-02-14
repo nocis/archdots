@@ -107,43 +107,57 @@
 27. LSP
     nvim-lsp set root dir for servers
 
-28. eslint
+    keymaps:
+<leader>cl	Lsp Info
+gd	Goto Definition
+gr	References
+gD	Goto Declaration
+gI	Goto Implementation
+gy	Goto T[y]pe Definition
+K	Hover
+gK	Signature Help
+<c-k>	Signature Help
+<leader>ca	Code Action
+<leader>cA	Source Action
+<leader>cr	Rename
+
+29. eslint
     package eslint install as eslint library
 
-29. javascript lint and auto import
+30. javascript lint and auto import
     required js/tsconfig.json
     checkJs: true
     
-30. for vue lsp
+31. for vue lsp
     install typescript
     @vue/language-server install default by mason
 
 
-31. add missing import
+32. add missing import
     feature from typescript LSP
     need types exposed via tsconfig(all installed node modules by default)
     Lsp and add import also works with out type module in package.json"
 
-32. lsp debug
+33. lsp debug
     restart and see lsplog
 
-33. package.json
+34. package.json
     type module accept export from js
 
-34. visual
+35. visual
     veeeee, incremental select words!!!
     bve, back to start,visual,eeeeeee
 
-35. Press P (uppercase) to paste before your cursor.
+36. Press P (uppercase) to paste before your cursor.
 
-36. diagnostic
+37. diagnostic
     <leader>sd: show document diagnostics
     <leader>xx: Document Diagnostics (Trouble) --this is better
 
-37. notifications
+38. notifications
     <leader>un	Dismiss all Notifications
 
-38. outline
+39. outline
     close = {"<Esc>", "q"},
     goto_location = "<Cr>",
     focus_location = "o",
@@ -156,7 +170,7 @@
     fold_all = "W",
     unfold_all = "E",
     fold_reset = "R",
-39. mini-bracket
+40. mini-bracket
      Using `lower-suffix` and `upper-suffix` (lower and upper case suffix) for a single target the following mappings are created:
     - `[` + `upper-suffix` : go first.
     - `[` + `lower-suffix` : go backward.
