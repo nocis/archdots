@@ -31,8 +31,9 @@
    before line + insert mode: O,
 
 8. copy from register (ie. *) : "*p
+   yaw:yank around word
 
-9. search repalce: :%s/old/new/c
+10. search repalce: :%s/old/new/c
    Once you selected the lines to replace, type your command:
 
    :s/<search_string>/<replace_string>/g
