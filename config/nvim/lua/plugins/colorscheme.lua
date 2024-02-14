@@ -8,9 +8,10 @@ return {
       floats = "transparent",
     },
     on_highlights = function(highlights, colors) 
-      highlights.Substitute = {
-        bg = "#ff757f",
-        fg = "#e6b793"
+      highlights.FlashLabel = {
+        bg = "#ff007c",
+        fg = "#19486c",
+        bold = false,
       }
     end,
   },
