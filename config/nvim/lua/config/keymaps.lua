@@ -27,6 +27,9 @@ keymap.set("n", "x", '"_x')
 
 -- Jumplist
 -- keymap.set("n", "<C-m>", "<C-i>", opts)
+   vim.keymap.set('n', '<leader>j', function()
+     require('whatthejump').browse_jumps()
+   end, { desc = 'show jumps'})
 
 -- New tab
 -- keymap.set("n", "te", ":tabedit")
