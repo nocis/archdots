@@ -36,7 +36,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
                 -- Check if buffer is actually modified, and only if it is modified,
                 local buf_modified  = vim.api.nvim_buf_get_option(buf, 'modified')
                 if buf_modified then
-		  cmake_timer:start(200, 0, function()
+		  cmake_timer:start(100, 0, function()
                     cmake_timer:close()
                     cmake_timer = nil
                     vim.schedule(
