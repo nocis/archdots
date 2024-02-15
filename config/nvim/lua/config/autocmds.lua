@@ -41,7 +41,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
                     cmake_timer = nil
                     vim.schedule(
                       function()
-                        print(vim.fn.system({"bash", "build.sh"}))
+                        vim.notify(vim.fn.system({"bash", "build.sh"}), vim.log.levels.INFO, {})
                       end)
                   end)
                 end
