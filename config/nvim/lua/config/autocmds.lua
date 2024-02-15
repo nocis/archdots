@@ -19,7 +19,8 @@ vim.api.nvim_create_autocmd("FileType", {
 
 
 -- run camke
-vim.api.nvim_create_autocmd("BufWritePost", {
+vim.api.nvim_create_autocmd("BufWritePre", {
+	group = vim.api.nvim_create_augroup("cmaketools", {clear = true}),
 	pattern = 'CMakeLists.txt',
 	callback = function()
 		local on_exit = function(obj)
@@ -28,9 +29,15 @@ vim.api.nvim_create_autocmd("BufWritePost", {
                     print(obj.stdout)
                     print(obj.stderr)
                 end
-		if vim.bo[0].modified then
-		    print(vim.fn.system({"bash", "build.sh"}))
-		end
+		local buf = vim.api.nvim_get_current_buf()
+                -- Check if buffer is actually modified, and only if it is modified,
+                local buf_modified  = vim.api.nvim_buf_get_option(buf, 'modified')
+                if buf_modified then
+                  vim.schedule(
+                    function()
+                      print(vim.fn.system({"bash", "build.sh"}))
+                    end)
+                end
 	end,
 })
 
