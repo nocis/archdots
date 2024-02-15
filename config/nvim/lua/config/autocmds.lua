@@ -19,10 +19,13 @@ vim.api.nvim_create_autocmd("FileType", {
 
 
 -- run camke
+local cmake_timer
 vim.api.nvim_create_autocmd("BufWritePre", {
 	group = vim.api.nvim_create_augroup("cmaketools", {clear = true}),
 	pattern = 'CMakeLists.txt',
 	callback = function()
+                cmake_timer = vim.loop.new_timer()
+                
 		local on_exit = function(obj)
                     -- print(obj.code)
                     -- print(obj.signal)
@@ -33,10 +36,14 @@ vim.api.nvim_create_autocmd("BufWritePre", {
                 -- Check if buffer is actually modified, and only if it is modified,
                 local buf_modified  = vim.api.nvim_buf_get_option(buf, 'modified')
                 if buf_modified then
-                  vim.schedule(
-                    function()
-                      print(vim.fn.system({"bash", "build.sh"}))
-                    end)
+		  cmake_timer:start(200, 0, function()
+                    cmake_timer:close()
+                    cmake_timer = nil
+                    vim.schedule(
+                      function()
+                        print(vim.fn.system({"bash", "build.sh"}))
+                      end)
+                  end)
                 end
 	end,
 })
