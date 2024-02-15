@@ -225,3 +225,5 @@ Alternate quickly between j and .
 
 42: command line
     <C-n> <C-p>
+43: save without format
+    :noa w
