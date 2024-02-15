@@ -96,3 +96,7 @@ end, {
 	desc = "Preview Hunk Inline",
 })
 
+-- clang type hierarchy
+vim.keymap.set('n', '<leader>ct', function()
+  require("clangd_extensions.type_hierarchy").show_hierarchy()
+end, { desc = 'clang type hierarchy'})
