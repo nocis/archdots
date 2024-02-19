@@ -1,4 +1,5 @@
 packagesPacman=(
+    "less"
     "chromium"
     "neovim"
     "chafa" # vim img viewer
