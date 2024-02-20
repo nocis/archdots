@@ -233,3 +233,12 @@ Alternate quickly between j and .
     [s will go to the previous misspelled word.
     z= suggests
     zg add to vocabulary
+
+45: multi cursor
+    1. / search
+    2. go first with n or N
+    3. v select the change scope
+    4. c change 
+    5. esc form insert
+    6. go next with n
+    7. apply same selection change with .
