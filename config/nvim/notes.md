@@ -227,3 +227,9 @@ Alternate quickly between j and .
     <C-n> <C-p>
 43: save without format
     :noa w
+
+44：misspell
+    ]s will go to the next misspelled word.
+    [s will go to the previous misspelled word.
+    z= suggests
+    zg add to vocabulary
