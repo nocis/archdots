@@ -125,40 +125,41 @@ gK	Signature Help
 29. eslint
     package eslint install as eslint library
 
-30. javascript lint and auto import
-    required js/tsconfig.json
-    checkJs: true
+30. lsp lint and auto import
+    ts/js required js/tsconfig.json
+    js need checkJs: true
+    tailwind need tailwind.config.js to work
     
-31. for vue lsp
+32. for vue lsp
     install typescript
     @vue/language-server install default by mason
 
 
-32. add missing import
+33. add missing import
     feature from typescript LSP
     need types exposed via tsconfig(all installed node modules by default)
     Lsp and add import also works with out type module in package.json"
 
-33. lsp debug
+34. lsp debug
     restart and see lsplog
 
-34. package.json
+35. package.json
     type module accept export from js
 
-35. visual
+36. visual
     veeeee, incremental select words!!!
     bve, back to start,visual,eeeeeee
 
-36. Press P (uppercase) to paste before your cursor.
+37. Press P (uppercase) to paste before your cursor.
 
-37. diagnostic
+38. diagnostic
     <leader>sd: show document diagnostics
     <leader>xx: Document Diagnostics (Trouble) --this is better
 
-38. notifications
+39. notifications
     <leader>un	Dismiss all Notifications
 
-39. outline
+40. outline
     close = {"<Esc>", "q"},
     goto_location = "<Cr>",
     focus_location = "o",
@@ -171,7 +172,7 @@ gK	Signature Help
     fold_all = "W",
     unfold_all = "E",
     fold_reset = "R",
-40. mini-bracket
+41. mini-bracket
      Using `lower-suffix` and `upper-suffix` (lower and upper case suffix) for a single target the following mappings are created:
     - `[` + `upper-suffix` : go first.
     - `[` + `lower-suffix` : go backward.
