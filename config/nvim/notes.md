@@ -245,6 +245,5 @@ Alternate quickly between j and .
     7. apply same selection change with .
 
 
-46: changeing filetype
-    for tailwindcss especially, same ext with css
-    :set filetype=Tailwind Css
+46: liveserver for html
+    npm live-server
