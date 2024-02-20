@@ -243,3 +243,8 @@ Alternate quickly between j and .
     5. esc form insert
     6. go next with n
     7. apply same selection change with .
+
+
+46: changeing filetype
+    for tailwindcss especially, same ext with css
+    :set filetype=Tailwind Css
