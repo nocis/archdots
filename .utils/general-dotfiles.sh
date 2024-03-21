@@ -6,4 +6,4 @@ _installSymbolicLink nvimPlugin ~/.config/nvim/lua/plugins ~/.local/dotfiles/con
 _installSymbolicLink nvimConfig ~/.config/nvim/lua/config ~/.local/dotfiles/config/nvim/lua/config/ ~/.config/nvim/lua
 _installSymbolicLink nvimCustomLib ~/.config/nvim/lua/customLib ~/.local/dotfiles/config/nvim/lua/customLib/ ~/.config/nvim/lua
 _installSymbolicLink nvimTemplates ~/.config/nvim-templates ~/.local/dotfiles/config/nvim-templates/ ~/.config
-_installSymbolicLink nvimSpell ~/.config/nvim/spell ~/.local/dotfiles/config/nvim-spell/ ~/.config/nvim
+_installSymbolicLink nvimSpell ~/.config/nvim/spell ~/.local/dotfiles/config/nvim-spell/ ~/.config/nvim/spell
