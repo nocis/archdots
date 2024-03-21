@@ -1,0 +1,13 @@
+[Unit]
+Description=wifi sleep hook
+Before=sleep.target
+StopWhenUnneeded=yes
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/rmmod mt7921e
+ExecStop=/usr/bin/modprobe mt7921e
+
+[Install]
+WantedBy=sleep.target
