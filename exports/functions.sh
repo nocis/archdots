@@ -7,6 +7,15 @@ mkfile()
     mkdir -p -- "$1" && touch -- "$1"/"$2" 
 }
 
+hibernate_deprecated()
+{
+    OFFSET=$(sudo filefrag -v /swap | awk '$1=="0:" {print substr($4, 1, length($4)-2)}')
+    SWAPLOC=$(findmnt -no MAJ:MIN -T /swap)
+    sudo bash -c "echo $SWAPLOC > /sys/power/resume"
+    sudo bash -c "echo $OFFSET > /sys/power/resume_offset"
+    systemctl hibernate
+}
+
 # 0. check installed
 # hash records the location of the binary of these commands in a hash table
 check_installed() 
