@@ -102,3 +102,10 @@ rm -rf .git/modules/path/to/submodule
 
 # Remove the entry in .gitmodules and remove the submodule directory located at path/to/submodule
 git rm -f path/to/submodule
+
+
+# enable hibernate process
+1. add resume hook for initramfs
+2. regenerate the initramfs
+3. add resume and resume_offset option in systemd entry ie. arch.conf
+4. fix wireless drive, lspci -k, modprobe on/off，dmesg frep firmware for logs
