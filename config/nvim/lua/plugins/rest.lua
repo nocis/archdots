@@ -1,7 +1,7 @@
 return {
 	-- plugins/rest.lua
 	{
-		"rest-nvim/rest.nvim",
+		"nocis/rest.nvim",
 		dependencies = { { "nvim-lua/plenary.nvim" } },
 		config = function()
 			require("rest-nvim").setup({
