@@ -2,6 +2,7 @@ return {
 	-- plugins/rest.lua
 	{
 		"nocis/rest.nvim",
+		enabled = false,
 		version = "e415a94d45fe9153482ac85e404ae9c558412fc9",
 		dependencies = { { "nvim-lua/plenary.nvim" } },
 		config = function()
