@@ -109,3 +109,9 @@ git rm -f path/to/submodule
 2. regenerate the initramfs
 3. add resume and resume_offset option in systemd entry ie. arch.conf
 4. fix wireless drive, lspci -k, modprobe on/off，dmesg frep firmware for logs
+
+# turn off wifi power
+1. sudo nano /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf
+2. wifi.powersave = 2
+[connection]
+wifi.powersave = 2
