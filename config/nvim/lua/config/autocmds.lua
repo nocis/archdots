@@ -2,6 +2,21 @@
 -- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
 -- Add any additional autocmds here
 
+
+-- Treat .ejs files as .html
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = "*.ejs",
+  command = "set filetype=html",
+})
+
+-- Treat .frag and .vert shader files as .glsl
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = { "*.frag", "*.vert" },
+  command = "set filetype=glsl",
+})
+
+
+
 -- disable paste mode when insert leave
 vim.api.nvim_create_autocmd("InsertLeave", {
 	pattern = "*",
