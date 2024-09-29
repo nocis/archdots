@@ -16,6 +16,9 @@ return {
       highlights.NeoTreeMessage = {
         fg = "#777777",
       }
+      highlights.DiagnosticUnnecessary = {
+        fg = "#777777",
+      }
     end,
   },
 }
