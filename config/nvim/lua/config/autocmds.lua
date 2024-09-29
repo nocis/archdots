@@ -55,8 +55,14 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 	callback = function()
 		vim.lsp.start({
 			name = "emmet-language-server-css",
-			cmd = { "node_modules/.bin/emmet-language-server", "--stdio" },
-			root_dir = vim.fs.dirname(vim.fs.find({ ".git" }, { upward = true })[1]),
+                        cmd = { vim.fs.root(0,"node_modules").."/node_modules/.bin/emmet-language-server", "--stdio" },
+
+                        -- vim.fs.find work with cwd, not buffer opened file path
+                        -- use vim.fs.root , until find first parent dir contains target file
+
+
+                        -- root_dir = vim.fs.dirname(vim.fs.find({ ".git" }, { upward = true })[1]),
+                        root_dir = vim.fs.root(0,"node_modules"),
 			-- Read more about this options in the [vscode docs](https://code.visualstudio.com/docs/editor/emmet#_emmet-configuration).
 			-- **Note:** only the options listed in the table are supported.
 			init_options = {
@@ -89,9 +95,15 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 	pattern = "css,eruby,html,htmldjango,javascriptreact,less,pug,sass,scss,typescriptreact",
 	callback = function()
 		vim.lsp.start({
-			name = "emmet-language-server",
-			cmd = { "node_modules/.bin/emmet-language-server", "--stdio" },
-			root_dir = vim.fs.dirname(vim.fs.find({ ".git" }, { upward = true })[1]),
+			name = "emmet-language-server-css",
+                        cmd = { vim.fs.root(0,"node_modules").."/node_modules/.bin/emmet-language-server", "--stdio" },
+
+                        -- vim.fs.find work with cwd, not buffer opened file path
+                        -- use vim.fs.root , until find first parent dir contains target file
+
+
+                        -- root_dir = vim.fs.dirname(vim.fs.find({ ".git" }, { upward = true })[1]),
+                        root_dir = vim.fs.root(0,"node_modules"),
 			-- Read more about this options in the [vscode docs](https://code.visualstudio.com/docs/editor/emmet#_emmet-configuration).
 			-- **Note:** only the options listed in the table are supported.
 			init_options = {
