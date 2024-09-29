@@ -4,6 +4,7 @@ return {
     opts = {
       servers = {
         cssmodules_ls = {},
+        graphql = {},
         cssls = {
           filetypes = { "css", "scss", "less" },
         },
