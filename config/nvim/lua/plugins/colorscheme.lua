@@ -13,6 +13,9 @@ return {
         fg = "#19486c",
         bold = false,
       }
+      highlights.NeoTreeMessage = {
+        fg = "#777777",
+      }
     end,
   },
 }
