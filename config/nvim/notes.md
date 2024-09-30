@@ -247,3 +247,7 @@ Alternate quickly between j and .
 
 46: liveserver for html
     npm live-server
+
+
+47: ui
+<leader>uh: toggle inlay hints
