@@ -251,3 +251,8 @@ Alternate quickly between j and .
 
 47: ui
 <leader>uh: toggle inlay hints
+
+48: selection
+vi'  ("select inner single quotes"): To select between the single quotes.
+vib ("select inner block") : (...)
+viB  :{...}
