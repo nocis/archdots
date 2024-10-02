@@ -32,6 +32,8 @@ keymap.set("n", "<C-a>", "gg<S-v>G")
 
 -- Do things without affecting the registers
 keymap.set("n", "x", '"_x')
+keymap.set("x", "p", "P")
+keymap.set("x", "P", "p")
 
 -- Disable continuations
 -- keymap.set("n", "<Leader>o", "o<Esc>^Da", opts)
