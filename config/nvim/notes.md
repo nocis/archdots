@@ -52,25 +52,26 @@
     gI Goto Implementation
     gy Goto T[y]pe Definition
     K Hover
+    K again: focus in hover window
     <leader>cr Rename
 
-12. buffer
+13. buffer
     <leader>bd delete current buffer
 
-13. mark
+14. mark
     open jump list: `
     add mark a: ma (mb mc ....)
     delete mark :delmarks a
 
-14. print current file path: <c-g>
+15. print current file path: <c-g>
 
-15. comment out:
+16. comment out:
     gc
 
-16. hjkl: better way to move cursor，10j：down 10 lines
+17. hjkl: better way to move cursor，10j：down 10 lines
     HL : move tab, K: hover J: trailing line
 
-17. Search and highlight : /
+18. Search and highlight : /
     keep search result and back to normal: <enter>
     Escape and clear hlsearch: <esc>
     n for next N for back
