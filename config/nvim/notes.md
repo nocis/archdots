@@ -244,6 +244,14 @@ Alternate quickly between j and .
     6. go next with n
     7. apply same selection change with .
 
+    1. / search
+    2. gn for next and select
+    3. c for change
+    4. for insert
+    5. esc for stop (highlight cleared but search still in record)
+    6. n for next search
+    7. . for repeat selection and apply last change
+
 
 46: liveserver for html
     npm live-server
