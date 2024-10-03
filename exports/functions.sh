@@ -7,6 +7,13 @@ mkfile()
     mkdir -p -- "$1" && touch -- "$1"/"$2" 
 }
 
+project() {
+  pjlist=$(find ~ -name '.*' -prune -name '.git' -printf "%h\n" | fzf --height=10%)
+  echo $pjlist
+  nvim $pjlist
+}
+
+
 hibernate_deprecated()
 {
     OFFSET=$(sudo filefrag -v /swap | awk '$1=="0:" {print substr($4, 1, length($4)-2)}')
