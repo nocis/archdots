@@ -53,6 +53,7 @@
     gy Goto T[y]pe Definition
     K Hover
     K again: focus in hover window
+    insert mode <c-k>: Signature Help
     <leader>cr Rename
 
 13. buffer
