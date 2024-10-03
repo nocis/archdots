@@ -45,6 +45,13 @@ export MY_NVIM_APPNAME="lazyvim"
 
 
 # -----------------------------------------------------
+# wsl
+# -----------------------------------------------------
+PROMPT_COMMAND=${PROMPT_COMMAND:+"$PROMPT_COMMAND; "}'printf "\e]9;9;%s\e\\" "$(wslpath -w "$PWD")"'
+
+
+
+# -----------------------------------------------------
 # History
 # -----------------------------------------------------
 source ~/.local/dotfiles/exports/history.sh
