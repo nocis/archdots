@@ -46,6 +46,8 @@ export MY_NVIM_APPNAME="lazyvim"
 
 # -----------------------------------------------------
 # wsl
+# must start terminal with C:\Windows\system32\wsl.exe -d Ubuntu
+# for start up with prev session setting，another ubuntu.exe wont pick osx 9;9;
 # -----------------------------------------------------
 PROMPT_COMMAND=${PROMPT_COMMAND:+"$PROMPT_COMMAND; "}'printf "\e]9;9;%s\e\\" "$(wslpath -w "$PWD")"'
 
