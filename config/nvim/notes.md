@@ -266,3 +266,16 @@ Alternate quickly between j and .
 vi'  ("select inner single quotes"): To select between the single quotes.
 vib ("select inner block") : (...)
 viB  :{...}
+
+
+49 git
+$ git remote add github https://github.com/Company_Name/repository_name.git
+
+# push master to github
+$ git push github master
+
+# Push my-branch to github and set it to track github/my-branch
+$ git push -u github my-branch
+
+# Make some existing branch track github instead of origin
+$ git branch --set-upstream other-branch github/other-branch
