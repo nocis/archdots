@@ -30,7 +30,8 @@ require("lazy").setup({
 		{ import = "lazyvim.plugins.extras.editor.inc-rename" },
 		{ import = "lazyvim.plugins.extras.coding.neogen" },
 		{ import = "lazyvim.plugins.extras.ui.treesitter-context" },
-		-- { import = "lazyvim.plugins.extras.coding.luasnip" },
+		{ import = "lazyvim.plugins.extras.coding.luasnip" },
+                { import = "lazyvim.plugins.extras.coding.yanky" },
 
 		-- import/override with your plugins
 		{ import = "plugins" },
