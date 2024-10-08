@@ -19,6 +19,10 @@ return {
       highlights.DiagnosticUnnecessary = {
         fg = "#777777",
       }
+      highlights.MatchParen = {
+        bg = "#e19b5e",
+        fg = "#140000",
+      }
     end,
   },
 }
