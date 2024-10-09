@@ -8,6 +8,7 @@ return {
         cssls = {
           filetypes = { "css", "scss", "less" },
         },
+        somesass_ls = {},
         html = {
           init_options = {
             configurationSection = { "html", "css", "javascript" },
