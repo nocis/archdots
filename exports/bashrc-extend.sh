@@ -58,3 +58,9 @@ PROMPT_COMMAND=${PROMPT_COMMAND:+"$PROMPT_COMMAND; "}'printf "\e]9;9;%s\e\\" "$(
 # -----------------------------------------------------
 source ~/.local/dotfiles/exports/history.sh
 
+
+# -----------------------------------------------------
+# Path
+# -----------------------------------------------------
+export PATH="$PATH:/opt/nvim/"
+export PATH="$PATH:/opt/hyper/"
