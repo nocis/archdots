@@ -58,56 +58,57 @@
 
 13. buffer
     <leader>bd delete current buffer
+    <leader>, list all buffer to switch
 
-14. mark
+15. mark
     open jump list: `
     add mark a: ma (mb mc ....)
     delete mark :delmarks a
 
-15. print current file path: <c-g>
+16. print current file path: <c-g>
 
-16. comment out:
+17. comment out:
     gc
 
-17. hjkl: better way to move cursor，10j：down 10 lines
+18. hjkl: better way to move cursor，10j：down 10 lines
     HL : move tab, K: hover J: trailing line
 
-18. Search and highlight : /
+19. Search and highlight : /
     keep search result and back to normal: <enter>
     Escape and clear hlsearch: <esc>
     n for next N for back
     * for search current
 
-19. help
+20. help
     Ctrl-] to follow the link
 
-20. search
+21. search
     type /
     type search term e.g. "var"
     press enter
     for next instance press n (for previous N)
     press `n`. If you want to search backward for the previous occurrence, press `N`.
 
-21. buffer
+22. buffer
     [b: prev buffer
     ]b: next buffer
 
-22. Rename
+23. Rename
     <leader>cr : rename prompt
 
-23. :qa quit all windows for quick open next time
+24. :qa quit all windows for quick open next time
 
-24. f find and jump, i will insert before search character
+25. f find and jump, i will insert before search character
     t find and jumo, i will insert after search character
     f or t will repeat(next match)
 
-25. completion
+26. completion
     <c-e> stop menu!
 
-26. format
+27. format
     confirm set .prettierrc
 
-27. LSP
+28. LSP
     nvim-lsp set root dir for servers
 
     keymaps:
