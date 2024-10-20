@@ -26,11 +26,12 @@
    diw - delete (cut) word under the cursor
    daw - delete (cut) word under the cursor and the space after or before it
    :3,5d - delete lines starting from 3 to 5
+   J: line join to delete empty line and space
 
-7. next line + insert mode: o
+8. next line + insert mode: o
    before line + insert mode: O,
 
-8. copy from register (ie. *) : "*p
+9. copy from register (ie. *) : "*p
    yaw:yank around word
 
 10. search repalce: :%s/old/new/c
