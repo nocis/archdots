@@ -27,6 +27,7 @@
    daw - delete (cut) word under the cursor and the space after or before it
    :3,5d - delete lines starting from 3 to 5
    J: line join to delete empty line and space
+   kJ: go back, then join next line for miss CR
 
 8. next line + insert mode: o
    before line + insert mode: O,
