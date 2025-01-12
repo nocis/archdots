@@ -282,3 +282,8 @@ $ git push -u github my-branch
 
 # Make some existing branch track github instead of origin
 $ git branch --set-upstream other-branch github/other-branch
+
+
+50: end/begin of file
+Go to Top - Double g
+Go to Bottom - Shift + g
