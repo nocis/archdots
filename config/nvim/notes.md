@@ -287,3 +287,7 @@ $ git branch --set-upstream other-branch github/other-branch
 50: end/begin of file
 Go to Top - Double g
 Go to Bottom - Shift + g
+
+
+51: open cursor in browser
+gx
