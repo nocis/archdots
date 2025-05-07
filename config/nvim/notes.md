@@ -291,3 +291,9 @@ Go to Bottom - Shift + g
 
 51: open cursor in browser
 gx
+
+
+52: git hunk
+apply: stage this change
+reset: discard this change
+interactively unstage hunks: git restore --staged -p  CMakeLists.txt
