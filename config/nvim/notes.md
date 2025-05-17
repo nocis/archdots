@@ -46,6 +46,10 @@
 
    Use \r instead of \n for new line
 
+   :%s/\(= \)\@<!len(matrix\(\[0\]\)*)/n/g
+   len(matrix) and len(matrix[0]) -> n
+   but without prefix "= " 
+
 11. LSP
     <leader>cl Lsp Info
     gd Goto Definition
