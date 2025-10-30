@@ -301,3 +301,8 @@ gx
 apply: stage this change
 reset: discard this change
 interactively unstage hunks: git restore --staged -p  CMakeLists.txt
+
+53 quickfix
+vim/vimgrep for search: vim export **src
+cprev/cnext/[q/]q: jump
+colder/cnewer: switch quickfix list
