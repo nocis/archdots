@@ -304,6 +304,11 @@ interactively unstage hunks: git restore --staged -p  CMakeLists.txt
 
 53 quickfix
 vim/vimgrep for search: vim export **src
+
+54 reload current buffer(via edit)
+:e
+
+
 copen: open list
 cprev/cnext/[q/]q: jump
 colder/cnewer: switch quickfix list
