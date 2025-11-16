@@ -198,6 +198,20 @@ def update_hosts(working_ips: list[str]):
     _ = run_cmd_as_admin_wsl(command)
 
 
+
+def filterWorkingIps(ips: list[str]):
+    with ThreadPoolExecutor(max_workers=20) as executor:
+        results = list(executor.map(test_ip, ips))
+
+    return [
+        ip
+        for ip, _ in sorted(
+            [(ip, time) for ip, status, time in results if status],
+            key=lambda x: x[1],
+        )
+    ]
+
+
 def main():
     if not is_admin():
         print("sudo")
@@ -206,17 +220,10 @@ def main():
     meta = get_github_meta()
     cidr_list = cast(list[str], json.loads(meta)["web"])
     ips = cidr_to_ips(cidr_list)
-    with ThreadPoolExecutor(max_workers=20) as executor:
-        results = list(executor.map(test_ip, ips))
 
-    working_ips = [
-        ip
-        for ip, _ in sorted(
-            [(ip, time) for ip, status, time in results if status],
-            key=lambda x: x[1],
-        )
-    ]
-    update_hosts(working_ips)
+    working_ips = filterWorkingIps(ips)
+    working_ips_validate = filterWorkingIps(working_ips)
+    update_hosts(working_ips_validate)
 
 
 if __name__ == "__main__":
