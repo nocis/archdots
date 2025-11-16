@@ -98,17 +98,29 @@ def test_ip(ip: str):
                 "Host: github.com",
                 f"https://{ip}",
                 "-w",
-                "%{http_code}",
+                "%{http_code},%{time_total}",
                 "-o",
                 "/dev/null",
             ],
             timeout=5,
             capture_output=True,
         )
-        http_code = int(result.stdout.decode().strip())
+        stdout = result.stdout.decode("utf-8").strip()
+        if not stdout or "," not in stdout:
+            return ip, False, float("inf")
+
+        http_code_str, time_total_str = stdout.split(",", 1)
+        http_code = int(http_code_str) if http_code_str.isdigit() else 0
+
+        response_time = (
+            float(time_total_str)
+            if time_total_str.replace(".", "").isdigit()
+            else float("inf")
+        )
+
         ssl_details = result.stderr.decode("utf-8")
         # curel-v, need to check cn, ip may indicate cn: *.github-debug.com
-
+        
         return ip, http_code in [200, 301, 302, 307, 308] and (
             "CN=github.com" in ssl_details
         )
@@ -197,7 +209,13 @@ def main():
     with ThreadPoolExecutor(max_workers=20) as executor:
         results = list(executor.map(test_ip, ips))
 
-    working_ips = [ip for ip, status in results if status]
+    working_ips = [
+        ip
+        for ip, _ in sorted(
+            [(ip, time) for ip, status, time in results if status],
+            key=lambda x: x[1],
+        )
+    ]
     update_hosts(working_ips)
 
 
