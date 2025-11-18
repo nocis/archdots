@@ -225,7 +225,13 @@ def main():
     working_ips = filterWorkingIps(ips)
     time.sleep(2)
     working_ips_validate = filterWorkingIps(working_ips)
-    update_hosts(working_ips_validate)
+    time.sleep(2)
+    working_ips = filterWorkingIps(working_ips_validate)
+    time.sleep(2)
+    working_ips_validate = filterWorkingIps(working_ips)
+    time.sleep(2)
+    working_ips = filterWorkingIps(working_ips_validate)
+    update_hosts(working_ips)
 
 
 if __name__ == "__main__":
