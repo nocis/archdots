@@ -7,6 +7,7 @@ import json
 import os
 import subprocess
 import sys
+import time
 from concurrent.futures import ThreadPoolExecutor
 from itertools import islice
 from typing import cast
@@ -222,6 +223,7 @@ def main():
     ips = cidr_to_ips(cidr_list)
 
     working_ips = filterWorkingIps(ips)
+    time.sleep(2)
     working_ips_validate = filterWorkingIps(working_ips)
     update_hosts(working_ips_validate)
 
