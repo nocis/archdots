@@ -327,5 +327,33 @@ visual select first + <leader>sr: search and replace
 56. select with recorded macro
 vq
 
+57. line command
+
+:sort	Sorts lines alphabetically or numerically.[1]	      :sort (A-Z)   :sort! (Z-A)     :sort n (Numeric)
+:g	Global: Run a command on all lines matching a pattern.	:g/error/d (Delete all lines containing "error")
+:v	Invert Global: Run a command on lines not matching.	   :v/success/d (Delete all lines not containing "success")
+:m	Move: Moves lines to another location.[1][3]	            :m $ (Move current line to the bottom)   :m 0 (Move current line to the top)
+:co	Copy: Copies lines to another location.[1]	         :co . (Duplicate current line)    :co $ (Copy current line to bottom)
+:j	Join: Joins lines together.[1]	                        :%j (Join the whole file into one line)
+:ce	Center: Centers text on the screen.[1]	               :ce
+:ri	Right: Aligns text to the right.[1]	                  :ri
+:le	Left: Aligns text to the left.[1]	                  :le
+:retab	Changes tabs to spaces (or vice-versa).	         :retab
+
+!uniq	Removes adjacent duplicate lines.[1]	               :%!uniq
+!column	Aligns text into columns (great for CSVs).[1]	   :%!column -t
+!shuf	Randomizes the order of lines.[1]	                  :%!shuf
+!nl	Adds line numbers to the text itself.	               :%!nl
+!tr	Translate characters (e.g., UPPERCASE).	            :%!tr a-z A-Z
+!wc	Word count (displays count in bottom bar).	         :%!wc
+!awk	Advanced text processing (e.g., print 2nd column).	   :%!awk '{print $2}'
+!rev  reverse left to right
+
+:g/^/m 0              put every line to the top one by one -> reverse from bottom
+ 
+:g/pattern/t$         copy every line contains pattern to the end 
+:g/pattern/norm @q    exec macro on pattern line
+
+
 
 
