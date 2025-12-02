@@ -316,3 +316,16 @@ cfdo: do to file, cfdo bd(close buffer)
 54 reload current buffer(via edit)
 :e
 
+55. search under cursor
+viw, select word
+#, search what selected
+
+visual select first + <leader>sw/W: grep selection under cursor
+visual select first + <leader>sr: search and replace 
+
+
+56. select with recorded macro
+vq
+
+
+
