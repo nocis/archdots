@@ -362,3 +362,9 @@ insert mode + <c-r>= : calculator
 59: register as var
 :let @+=@%    assign register val
 
+60. fast surround
+<c-space> inc selection with repeat, dec selection with bachspace
+c: for change and yank selection
+type surround, cursor will in between, then paste
+surround done! 
+
