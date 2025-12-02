@@ -317,7 +317,6 @@ cfdo: do to file, cfdo bd(close buffer)
 :e
 
 55. search under cursor
-viw, select word
 #, search what selected
 
 visual select first + <leader>sw/W: grep selection under cursor
@@ -353,7 +352,13 @@ vq
  
 :g/pattern/t$         copy every line contains pattern to the end 
 :g/pattern/norm @q    exec macro on pattern line
+:r!whoami             add author
+:r!date               add date
+
+58. calculator
+insert mode + <c-r>= : calculator
 
 
-
+59: register as var
+:let @+=@%    assign register val
 
