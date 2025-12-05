@@ -304,6 +304,7 @@ interactively unstage hunks: git restore --staged -p  CMakeLists.txt
 
 53 quickfix
 vim/vimgrep for search: vim export **src
+fzf search ctrl+q add result to quickfix
 
 copen: open list
 cprev/cnext/[q/]q: jump
@@ -368,3 +369,11 @@ c: for change and yank selection
 type surround, cursor will in between, then paste
 surround done! 
 
+61. rotate symbol under cursor
+\[\[ or \]\]
+
+62. nav between scope
+\[i  or \]i
+
+63. prev loc
+c-o c-i
