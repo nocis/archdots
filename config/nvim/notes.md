@@ -367,13 +367,15 @@ insert mode + <c-r>= : calculator
 <c-space> inc selection with repeat, dec selection with bachspace
 c: for change and yank selection
 type surround, cursor will in between, then paste
-surround done! 
+surround done!
 
-61. rotate symbol under cursor
+vib/viB: inner block ()/[]{}, fast selection then past to remove braces
+
+62. rotate symbol under cursor
 \[\[ or \]\]
 
-62. nav between scope
+63. nav between scope
 \[i  or \]i
 
-63. prev loc
+64. prev loc
 c-o c-i
