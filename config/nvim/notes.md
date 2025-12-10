@@ -379,3 +379,5 @@ vib/viB: inner block ()/[]{}, fast selection then past to remove braces
 
 64. prev loc
 c-o c-i
+
+65. gi: go last insert
