@@ -390,4 +390,8 @@ c-o c-i
 5. ft, s, /
 6. repeat operator, ;/, , .
 7. bookmark m '
-8. 
+
+
+67. highlight search and selection
+n: jump to next
+gn: jump and select the searched pattern
