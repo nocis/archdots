@@ -381,3 +381,13 @@ vib/viB: inner block ()/[]{}, fast selection then past to remove braces
 c-o c-i
 
 65. gi: go last insert
+
+66. motion pitifall:
+1. dont use hjkl all time, slow
+2. use counts
+3. WBE, wbe
+4. dont use mouse
+5. ft, s, /
+6. repeat operator, ;/, , .
+7. bookmark m '
+8. 
