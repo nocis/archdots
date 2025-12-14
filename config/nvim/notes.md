@@ -380,9 +380,13 @@ vib/viB: inner block ()/[]{}, fast selection then past to remove braces
 64. prev loc
 c-o c-i
 
-65. gi: go last insert
+65. changes list
+:changes show changes history 
+gi: go last insert
+g;: prev change
+g,: next change
 
-66. motion pitifall:
+67. motion pitifall:
 1. dont use hjkl all time, slow
 2. use counts
 3. WBE, wbe
