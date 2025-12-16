@@ -261,6 +261,8 @@ Alternate quickly between j and .
     6. n for next search
     7. . for repeat selection and apply last change
 
+    <s-v> visual block
+    <s-i>/<s-a> inseart before/after block
 
 46: liveserver for html
     npm live-server
