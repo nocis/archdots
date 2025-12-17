@@ -398,6 +398,49 @@ g,: next change
 7. bookmark m '
 
 
-67. highlight search and selection
+68. highlight search and selection
 n: jump to next
 gn: jump and select the searched pattern
+
+69. profile an issue
+1. notice save slow
+2. profile
+ profile start profile.log
+ profile func *
+ profile file *
+ profile pause
+
+3. sees no suspecct
+4. consider BufWritePre which autocmd is invisible to profiler
+5. 
+:lua << EOF
+local start_time = vim.loop.hrtime()
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*",
+  callback = function()
+    print("BufWritePre started: " .. (vim.loop.hrtime() - start_time) / 1e6 .. "ms")
+  end
+})
+vim.api.nvim_create_autocmd("BufWritePost", {
+  pattern = "*",
+  callback = function()
+    print("BufWritePost finished: " .. (vim.loop.hrtime() - start_time) / 1e6 .. "ms")
+  end
+})
+EOF
+
+6. identified BufWritePre
+BufWritePre started: 5790.958171ms
+BufWritePost finished: 5804.676583ms
+
+7. check which cmd blocking
+:verbose autocmd BufWritePre <buffer>
+
+8. isolate the cmd id
+:lua for _, a in ipairs(vim.api.nvim_get_autocmds({ event = "BufWritePre" })) do print("ID: "..a.id.." | Group: "..(a.group_name or "N/A").." | Pattern: "..a.pattern.." | Desc: "..(a.desc or "N/A")) end
+:lua vim.api.nvim_del_augroup_by_name("your cmd")
+:lua vim.api.nvim_del_autocmd(id)
+
+9. we finally found LazyFormat  BufWritePre which causes save blocking
+
+
