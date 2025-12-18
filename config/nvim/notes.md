@@ -444,3 +444,7 @@ BufWritePost finished: 5804.676583ms
 9. we finally found LazyFormat  BufWritePre which causes save blocking
 
 
+70. tab mode term
+    1. new tab
+    2. :terminal
+    3. <C-\><C-n> for screen selection/normal mode
