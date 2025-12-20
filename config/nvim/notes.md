@@ -448,3 +448,9 @@ BufWritePost finished: 5804.676583ms
     1. new tab
     2. :terminal
     3. <C-\><C-n> for screen selection/normal mode
+
+71. tmux kill stuck process
+    1. tmux list-panes -a -F "#{session_name}:#{window_index}.#{pane_index} #{pane_pid} #{pane_current_command}"
+    2. pgrep -P <pane pid above>
+    3. ps -aux | grep <process above>
+    4. kill -9 <process above>
