@@ -454,3 +454,8 @@ BufWritePost finished: 5804.676583ms
     2. pgrep -P <pane pid above>
     3. ps -aux | grep <process above>
     4. kill -9 <process above>
+
+72. kill window/pane
+    1. tmux kill-window -t my-session:2
+    2. tmux kill-pane -t my-session:2.0
+    3. respawn-pane/respawn-window -k
