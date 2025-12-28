@@ -459,3 +459,8 @@ BufWritePost finished: 5804.676583ms
     1. tmux kill-window -t my-session:2
     2. tmux kill-pane -t my-session:2.0
     3. respawn-pane/respawn-window -k
+
+73. show keystroke
+    1. insert mode
+    2. c-q, will dispaly a ^ waiting char
+    3. use keystroke, it will show what you actually send
